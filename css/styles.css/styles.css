@@ -1,116 +1,23 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nexus Move - Transporte Ejecutivo</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/styles.css">
-</head>
-<body>
+body {
+    font-family: Arial, sans-serif;
+}
 
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-        <div class="container">
-            <a class="navbar-brand" href="#">
-                <img src="img/logo.png" alt="Nexus Move" height="40"> Nexus Move
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="#inicio">Inicio</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#quienes-somos">Quiénes Somos</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#servicios">Servicios</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+header {
+    background-color: #007bff;
+    color: white;
+    text-align: center;
+    padding: 80px 0;
+}
 
-    <!-- Sección Inicio -->
-    <header id="inicio" class="text-white text-center d-flex align-items-center justify-content-center">
-        <div class="container">
-            <h1 class="display-4 mt-3">Transporte Ejecutivo de Alta Calidad</h1>
-            <p class="lead">Movilidad eficiente y segura para empresas y clientes particulares.</p>
-            <a href="#contacto" class="btn btn-light btn-lg">Contáctanos</a>
-        </div>
-    </header>
+.navbar {
+    background-color: #0056b3 !important;
+}
 
-    <!-- Sección Quiénes Somos -->
-    <section id="quienes-somos" class="py-5 bg-light">
-        <div class="container text-center">
-            <h2>Quiénes Somos</h2>
-            <p class="mt-4">
-                En <strong>Nexus Move</strong>, nos especializamos en ofrecer transporte ejecutivo y corporativo con los más altos estándares de calidad y seguridad.
-                Con años de experiencia en el sector, hemos construido una reputación basada en la confianza, la puntualidad y la eficiencia.
-            </p>
-            <p>
-                Nuestra misión es proporcionar soluciones de movilidad adaptadas a las necesidades de cada cliente, ya sean traslados corporativos, transporte para licitaciones o servicios personalizados.
-            </p>
-        </div>
-    </section>
+h2 {
+    color: #0056b3;
+}
 
-    <!-- Sección Servicios -->
-    <section id="servicios" class="py-5">
-        <div class="container text-center">
-            <h2>Nuestros Servicios</h2>
-            <div class="row mt-4">
-                <div class="col-md-4">
-                    <h4>Transporte Ejecutivo</h4>
-                    <p>Viajes seguros y confortables para clientes VIP y empresas.</p>
-                </div>
-                <div class="col-md-4">
-                    <h4>Traslados Corporativos</h4>
-                    <p>Movilidad eficiente para ejecutivos y empleados.</p>
-                </div>
-                <div class="col-md-4">
-                    <h4>Servicios en Licitaciones</h4>
-                    <p>Proveemos transporte para contratos públicos y privados.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Sección Contacto -->
-    <section id="contacto" class="py-5 bg-light">
-        <div class="container">
-            <h2 class="text-center">Contáctanos</h2>
-            <p class="text-center">Puedes comunicarte con nosotros por correo o teléfono.</p>
-            <div class="row">
-                <div class="col-md-6 text-center">
-                    <h4>📞 Teléfono:</h4>
-                    <p>+54 9 261 367 1376</p>
-                    <h4>📧 Email:</h4>
-                    <p><a href="mailto:infonexusmove@gmail.com">infonexusmove@gmail.com</a></p>
-                </div>
-                <div class="col-md-6">
-                    <form action="https://formspree.io/f/mwkgpnlv" method="POST" class="p-4 shadow rounded">
-                        <div class="mb-3">
-                            <label for="nombre" class="form-label">Nombre</label>
-                            <input type="text" class="form-control" id="nombre" name="nombre" required>
-                        </div>
-                        <div class="mb-3">
-                            <label for="email" class="form-label">Correo Electrónico</label>
-                            <input type="email" class="form-control" id="email" name="_replyto" required>
-                        </div>
-                        <div class="mb-3">
-                            <label for="mensaje" class="form-label">Mensaje</label>
-                            <textarea class="form-control" id="mensaje" name="mensaje" rows="4" required></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-primary w-100">Enviar Mensaje</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="bg-primary text-white text-center py-3">
-        <p>&copy; 2025 Nexus Move. Todos los derechos reservados.</p>
-    </footer>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-</body>
-</html>
+footer {
+    background-color: #0056b3;
+    color: white;
+}
