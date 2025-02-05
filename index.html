@@ -3,16 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Transporte Ejecutivo</title>
+    <title>Nexus Move - Transporte Ejecutivo</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
 
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
         <div class="container">
-            <a class="navbar-brand" href="#">Transporte Ejecutivo</a>
+            <a class="navbar-brand" href="#">
+                <img src="img/logo.png" alt="Nexus Move" height="50"> Nexus Move
+            </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -26,12 +28,14 @@
         </div>
     </nav>
 
-    <!-- Sección Inicio -->
-    <header id="inicio" class="text-white text-center d-flex align-items-center justify-content-center" style="background: url('img/transport.jpg') no-repeat center center/cover; height: 100vh;">
+    <!-- Sección Inicio con Logo de Fondo -->
+    <header id="inicio" class="text-white text-center d-flex align-items-center justify-content-center">
+        <div class="overlay"></div>
         <div class="container">
-            <h1 class="display-4">Servicio de Transporte Ejecutivo</h1>
-            <p class="lead">Transporte confiable, seguro y cómodo para tu empresa o viajes personales.</p>
-            <a href="#contacto" class="btn btn-primary btn-lg">Contáctanos</a>
+            <img src="img/logo.png" alt="Nexus Move" class="logo-principal">
+            <h1 class="display-4 mt-3">Transporte Ejecutivo de Alta Calidad</h1>
+            <p class="lead">Movilidad eficiente y segura para empresas y clientes particulares.</p>
+            <a href="#contacto" class="btn btn-light btn-lg">Contáctanos</a>
         </div>
     </header>
 
@@ -42,15 +46,15 @@
             <div class="row mt-4">
                 <div class="col-md-4">
                     <h4>Transporte Ejecutivo</h4>
-                    <p>Viajes seguros y confortables para empresas y clientes VIP.</p>
+                    <p>Viajes seguros y confortables para clientes VIP y empresas.</p>
                 </div>
                 <div class="col-md-4">
                     <h4>Traslados Corporativos</h4>
-                    <p>Movilidad eficiente para empleados y ejecutivos.</p>
+                    <p>Movilidad eficiente para ejecutivos y empleados.</p>
                 </div>
                 <div class="col-md-4">
                     <h4>Servicios en Licitaciones</h4>
-                    <p>Ofrecemos transporte en contratos públicos y privados.</p>
+                    <p>Proveemos transporte para contratos públicos y privados.</p>
                 </div>
             </div>
         </div>
@@ -60,28 +64,38 @@
     <section id="contacto" class="py-5">
         <div class="container">
             <h2 class="text-center">Contáctanos</h2>
-            <p class="text-center">Envíanos un mensaje y te responderemos lo antes posible.</p>
-            <form action="https://formspree.io/f/xknanapq" method="POST" class="w-50 mx-auto">
-                <div class="mb-3">
-                    <label for="nombre" class="form-label">Nombre</label>
-                    <input type="text" class="form-control" id="nombre" name="nombre" required>
+            <p class="text-center">Puedes comunicarte con nosotros por correo o teléfono.</p>
+            <div class="row">
+                <div class="col-md-6 text-center">
+                    <h4>📞 Teléfono:</h4>
+                    <p>+54 9 XXX-XXX-XXXX</p>
+                    <h4>📧 Email:</h4>
+                    <p>tucorreo@ejemplo.com</p>
                 </div>
-                <div class="mb-3">
-                    <label for="email" class="form-label">Correo Electrónico</label>
-                    <input type="email" class="form-control" id="email" name="_replyto" required>
+                <div class="col-md-6">
+                    <form action="https://formspree.io/f/xknanapq" method="POST" class="p-4 shadow rounded">
+                        <div class="mb-3">
+                            <label for="nombre" class="form-label">Nombre</label>
+                            <input type="text" class="form-control" id="nombre" name="nombre" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Correo Electrónico</label>
+                            <input type="email" class="form-control" id="email" name="_replyto" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="mensaje" class="form-label">Mensaje</label>
+                            <textarea class="form-control" id="mensaje" name="mensaje" rows="4" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100">Enviar Mensaje</button>
+                    </form>
                 </div>
-                <div class="mb-3">
-                    <label for="mensaje" class="form-label">Mensaje</label>
-                    <textarea class="form-control" id="mensaje" name="mensaje" rows="4" required></textarea>
-                </div>
-                <button type="submit" class="btn btn-primary w-100">Enviar Mensaje</button>
-            </form>
+            </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="bg-dark text-white text-center py-3">
-        <p>&copy; 2025 Transporte Ejecutivo. Todos los derechos reservados.</p>
+    <footer class="bg-primary text-white text-center py-3">
+        <p>&copy; 2025 Nexus Move. Todos los derechos reservados.</p>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>

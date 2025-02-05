@@ -1,0 +1,36 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+header {
+    position: relative;
+    background: url('img/logo.png') no-repeat center center/contain;
+    height: 100vh;
+    color: white;
+    text-align: center;
+    padding: 50px 0;
+}
+
+header .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.logo-principal {
+    max-width: 250px;
+    display: block;
+    margin: 0 auto;
+}
+
+.navbar {
+    background-color: #007bff !important;
+}
+
+footer {
+    background-color: #007bff;
+    color: white;
+}
