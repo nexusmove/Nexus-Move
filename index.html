@@ -2,22 +2,22 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Nexus Move - Transporte Ejecutivo</title>
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
   <!-- AOS CSS para animaciones -->
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-  <!-- CSS personalizado -->
+  <!-- CSS Personalizado -->
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-  
   <!-- Navbar -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
     <div class="container">
       <a class="navbar-brand" href="#">
         <img src="img/logo.png" alt="Nexus Move" height="40"> Nexus Move
+        <small class="d-block">Conectando destinos, acercando personas</small>
       </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
         <span class="navbar-toggler-icon"></span>
@@ -26,14 +26,15 @@
         <ul class="navbar-nav ms-auto">
           <li class="nav-item"><a class="nav-link" href="#inicio">Inicio</a></li>
           <li class="nav-item"><a class="nav-link" href="#quienes-somos">Quiénes Somos</a></li>
+          <li class="nav-item"><a class="nav-link" href="#flota">Nuestra Flota</a></li>
           <li class="nav-item"><a class="nav-link" href="#servicios">Servicios</a></li>
           <li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
         </ul>
       </div>
     </div>
   </nav>
-  
-  <!-- Sección Inicio -->
+
+  <!-- Sección Inicio (Hero) -->
   <header id="inicio" class="text-white text-center d-flex align-items-center justify-content-center" data-aos="fade-up">
     <div class="container">
       <h1 class="display-4 mt-3">Movilidad Ejecutiva de Alto Nivel</h1>
@@ -41,7 +42,7 @@
       <a href="#contacto" class="btn btn-light btn-lg">Contáctanos</a>
     </div>
   </header>
-  
+
   <!-- Sección Quiénes Somos -->
   <section id="quienes-somos" class="py-5 bg-light" data-aos="fade-up">
     <div class="container text-center">
@@ -50,16 +51,42 @@
         En <strong>Nexus Move</strong>, convertimos el transporte en una experiencia premium, ofreciendo seguridad, puntualidad y confort en cada trayecto.
       </p>
       <p>
-        Con una amplia trayectoria en el sector, hemos perfeccionado nuestros servicios para empresas, profesionales y organismos públicos que buscan soluciones de movilidad eficientes y confiables.
+        Nuestra historia comenzó con la pasión por brindar soluciones de movilidad de alta calidad. Desde nuestros inicios, hemos superado desafíos y aprendido a adaptarnos para ofrecer un servicio que marca la diferencia en el sector.
       </p>
       <p>
-        <strong>Nuestra Misión:</strong> Más que trasladar personas, creamos experiencias de viaje que aportan valor a nuestros clientes. Ya sea para reuniones corporativas, traslados ejecutivos o contratos institucionales, nos aseguramos de que cada viaje sea sinónimo de calidad.
+        <strong>Nuestra Misión:</strong> Más que trasladar personas, creamos experiencias de viaje que aportan valor. Ya sea para reuniones corporativas, traslados ejecutivos o contratos públicos y privados, nos comprometemos a que cada trayecto sea sinónimo de excelencia.
+      </p>
+      <p>
+        Mirando hacia el futuro, nos enfocamos en la innovación, la expansión y el compromiso con la sostenibilidad para seguir siendo líderes en el transporte ejecutivo.
       </p>
     </div>
   </section>
-  
+
+  <!-- Sección Nuestra Flota -->
+  <section id="flota" class="py-5" data-aos="fade-up">
+    <div class="container text-center">
+      <h2>Nuestra Flota</h2>
+      <p class="mt-4">Descubre nuestros vehículos de alta gama, diseñados para ofrecerte la máxima comodidad y seguridad.</p>
+      <!-- Aquí podrías insertar una galería de imágenes -->
+      <div class="row mt-4">
+        <div class="col-md-4 mb-3">
+          <img src="img/vehiculo1.jpg" class="img-fluid rounded" alt="Vehículo 1">
+          <p class="mt-2">Vehículo Ejecutivo 1</p>
+        </div>
+        <div class="col-md-4 mb-3">
+          <img src="img/vehiculo2.jpg" class="img-fluid rounded" alt="Vehículo 2">
+          <p class="mt-2">Vehículo Ejecutivo 2</p>
+        </div>
+        <div class="col-md-4 mb-3">
+          <img src="img/vehiculo3.jpg" class="img-fluid rounded" alt="Vehículo 3">
+          <p class="mt-2">Vehículo Ejecutivo 3</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- Sección Servicios -->
-  <section id="servicios" class="py-5" data-aos="fade-up">
+  <section id="servicios" class="py-5 bg-light" data-aos="fade-up">
     <div class="container text-center">
       <h2>Nuestros Servicios</h2>
       <div class="row mt-4">
@@ -69,7 +96,7 @@
         </div>
         <div class="col-md-4">
           <h4>Traslados Corporativos</h4>
-          <p>Movilidad estratégica para ejecutivos, empleados y equipos de trabajo.</p>
+          <p>Movilidad estratégica para ejecutivos y equipos de trabajo.</p>
         </div>
         <div class="col-md-4">
           <h4>Transporte en Contratos Públicos y Privados</h4>
@@ -78,33 +105,42 @@
       </div>
     </div>
   </section>
-  
+
   <!-- Sección Contacto -->
-  <section id="contacto" class="py-5 bg-light" data-aos="fade-up">
+  <section id="contacto" class="py-5" data-aos="fade-up">
     <div class="container text-center">
       <h2>Contáctanos</h2>
-      <p>Puedes comunicarte con nosotros por teléfono o WhatsApp.</p>
+      <p>Puedes comunicarte con nosotros por teléfono o a través de WhatsApp.</p>
       <h4>📞 Teléfono:</h4>
       <p>+54 9 261 367 1376</p>
       <h4>📧 Email:</h4>
       <p><a href="mailto:infonexusmove@gmail.com">infonexusmove@gmail.com</a></p>
-      <a href="https://wa.me/5492613671376" class="btn btn-success btn-lg mt-3">📩 Enviar Mensaje por WhatsApp</a>
+      <a href="https://wa.me/5492613671376" class="btn btn-success btn-lg mt-3">Enviar Mensaje por WhatsApp</a>
     </div>
   </section>
-  
+
+  <!-- Sección Protección de Derechos -->
+  <section id="proteccion-derechos" class="py-3 bg-dark text-white">
+    <div class="container text-center">
+      <p>
+        En <strong>Nexus Move</strong> nos comprometemos a proteger nuestros derechos de propiedad intelectual y a cumplir con las regulaciones del sector. Implementamos medidas de seguridad y promovemos prácticas éticas para salvaguardar nuestros activos y la confianza de nuestros clientes.
+      </p>
+    </div>
+  </section>
+
   <!-- Footer -->
   <footer class="bg-primary text-white text-center py-3">
     <p>&copy; 2025 Nexus Move. Todos los derechos reservados.</p>
   </footer>
-  
+
   <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   <!-- AOS JS para animaciones -->
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
     AOS.init({
-      duration: 800, // duración de la animación en milisegundos
-      once: true     // si la animación se reproduce solo una vez
+      duration: 800, // Duración de la animación en milisegundos
+      once: true     // La animación se ejecuta una sola vez
     });
   </script>
 </body>
