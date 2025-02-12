@@ -12,12 +12,14 @@
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
+  
   <!-- Navbar -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
     <div class="container">
       <a class="navbar-brand" href="#">
-        <img src="img/logo.png" alt="Nexus Move" height="40"> Nexus Move
-        <small class="d-block">Conectando destinos, acercando personas</small>
+        <img src="img/logo.png" alt="Nexus Move" class="logo-nav">
+        Nexus Move
+        <small class="d-block slogan">Nos ocupamos de tu traslado, vos de llegar más lejos.</small>
       </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
         <span class="navbar-toggler-icon"></span>
@@ -35,8 +37,10 @@
   </nav>
 
   <!-- Sección Inicio (Hero) -->
-  <header id="inicio" class="text-white text-center d-flex align-items-center justify-content-center" data-aos="fade-up">
+  <header id="inicio" class="text-white text-center d-flex align-items-center justify-content-center" data-aos="zoom-in">
     <div class="container">
+      <!-- Imagen de fondo opcional o usar una imagen en línea -->
+      <img src="img/hero.jpg" alt="Imagen Principal" class="img-fluid hero-img">
       <h1 class="display-4 mt-3">Movilidad Ejecutiva de Alto Nivel</h1>
       <p class="lead">Conectamos personas y empresas con un servicio de transporte confiable, seguro y eficiente.</p>
       <a href="#contacto" class="btn btn-light btn-lg">Contáctanos</a>
@@ -48,16 +52,16 @@
     <div class="container text-center">
       <h2>Quiénes Somos</h2>
       <p class="mt-4">
-        En <strong>Nexus Move</strong>, convertimos el transporte en una experiencia premium, ofreciendo seguridad, puntualidad y confort en cada trayecto.
+        En <strong>Nexus Move</strong>, transformamos el traslado en una experiencia premium, combinando seguridad, puntualidad y confort en cada viaje.
       </p>
       <p>
-        Nuestra historia comenzó con la pasión por brindar soluciones de movilidad de alta calidad. Desde nuestros inicios, hemos superado desafíos y aprendido a adaptarnos para ofrecer un servicio que marca la diferencia en el sector.
+        Nuestra historia comenzó con la pasión por resolver los desafíos de movilidad para empresas y particulares. Desde nuestros inicios, hemos crecido y aprendido a adaptarnos, ofreciendo soluciones integrales que permiten a nuestros clientes concentrarse en lo que realmente importa.
       </p>
       <p>
-        <strong>Nuestra Misión:</strong> Más que trasladar personas, creamos experiencias de viaje que aportan valor. Ya sea para reuniones corporativas, traslados ejecutivos o contratos públicos y privados, nos comprometemos a que cada trayecto sea sinónimo de excelencia.
+        <strong>Nuestra Misión:</strong> Brindar un servicio de transporte de alto nivel que genere experiencias de viaje únicas, permitiendo que nuestros clientes se enfoquen en sus objetivos mientras nosotros nos encargamos del traslado.
       </p>
       <p>
-        Mirando hacia el futuro, nos enfocamos en la innovación, la expansión y el compromiso con la sostenibilidad para seguir siendo líderes en el transporte ejecutivo.
+        Con visión de innovación y expansión, trabajamos para seguir liderando el sector del transporte ejecutivo.
       </p>
     </div>
   </section>
@@ -66,19 +70,18 @@
   <section id="flota" class="py-5" data-aos="fade-up">
     <div class="container text-center">
       <h2>Nuestra Flota</h2>
-      <p class="mt-4">Descubre nuestros vehículos de alta gama, diseñados para ofrecerte la máxima comodidad y seguridad.</p>
-      <!-- Aquí podrías insertar una galería de imágenes -->
+      <p class="mt-4">Conocé nuestros vehículos de alta gama, diseñados para ofrecer la máxima comodidad y seguridad.</p>
       <div class="row mt-4">
         <div class="col-md-4 mb-3">
-          <img src="img/vehiculo1.jpg" class="img-fluid rounded" alt="Vehículo 1">
+          <img src="img/vehiculo1.jpg" class="img-fluid rounded" alt="Vehículo Ejecutivo 1">
           <p class="mt-2">Vehículo Ejecutivo 1</p>
         </div>
         <div class="col-md-4 mb-3">
-          <img src="img/vehiculo2.jpg" class="img-fluid rounded" alt="Vehículo 2">
+          <img src="img/vehiculo2.jpg" class="img-fluid rounded" alt="Vehículo Ejecutivo 2">
           <p class="mt-2">Vehículo Ejecutivo 2</p>
         </div>
         <div class="col-md-4 mb-3">
-          <img src="img/vehiculo3.jpg" class="img-fluid rounded" alt="Vehículo 3">
+          <img src="img/vehiculo3.jpg" class="img-fluid rounded" alt="Vehículo Ejecutivo 3">
           <p class="mt-2">Vehículo Ejecutivo 3</p>
         </div>
       </div>
@@ -120,7 +123,7 @@
   </section>
 
   <!-- Sección Protección de Derechos -->
-  <section id="proteccion-derechos" class="py-3 bg-dark text-white">
+  <section id="proteccion-derechos" class="py-3 bg-dark text-white" data-aos="fade-up">
     <div class="container text-center">
       <p>
         En <strong>Nexus Move</strong> nos comprometemos a proteger nuestros derechos de propiedad intelectual y a cumplir con las regulaciones del sector. Implementamos medidas de seguridad y promovemos prácticas éticas para salvaguardar nuestros activos y la confianza de nuestros clientes.
@@ -139,8 +142,8 @@
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
     AOS.init({
-      duration: 800, // Duración de la animación en milisegundos
-      once: true     // La animación se ejecuta una sola vez
+      duration: 800,
+      once: true
     });
   </script>
 </body>
