@@ -1,0 +1,56 @@
+/* Ajustar tamaño del logo */
+.logo-nav {
+  height: 40px; /* Tamaño más equilibrado */
+  width: auto; /* Mantiene la proporción */
+}
+
+/* Ajustar tamaño de la imagen de fondo */
+.hero-img {
+  max-width: 70%; /* Se reduce el tamaño */
+  height: auto;
+}
+
+/* Ajustar tamaño de las imágenes de la flota */
+#flota img {
+  width: 80%; /* Reduce el tamaño */
+  max-width: 300px;
+  margin: 0 auto;
+}
+
+/* Ajuste en la sección de Quiénes Somos */
+#quienes-somos {
+  text-align: center;
+  padding: 60px 20px;
+}
+
+/* Botón flotante de WhatsApp */
+.whatsapp-float {
+  position: fixed;
+  bottom: 15px;
+  right: 15px;
+  width: 45px;
+  height: 45px;
+  background-color: #25D366;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+}
+.whatsapp-float img {
+  width: 30px;
+  height: 30px;
+}
+
+/* Botón en sección contacto */
+.whatsapp-icon {
+  width: 18px;
+  height: 18px;
+  margin-right: 8px;
+}
+
+/* Animaciones */
+[data-aos] {
+  opacity: 0;
+  transition-property: opacity, transform;
+}
