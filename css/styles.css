@@ -1,89 +1,56 @@
-/* ====== Identidad visual / Navbar ====== */
-/* Logo en la barra: tamaño proporcional y legible */
+/* Ajustar tamaño del logo */
 .logo-nav {
-  max-height: 42px;     /* más controlado que height fija */
-  width: auto;
-  margin-right: 8px;
+  height: 40px; /* Tamaño más equilibrado */
+  width: auto; /* Mantiene la proporción */
 }
 
-/* Slogan bajo la marca (delicado) */
-.slogan {
-  font-size: 12px;
-  opacity: .85;
-}
-
-/* ====== Hero / Portada ====== */
-/* El header #inicio ya existe en tu HTML como portada */
-header#inicio {
-  text-align: center;
-  padding: 60px 20px;
-}
-header#inicio .btn-lg {
-  font-weight: 600;
-  border-radius: 10px;
-}
-
-/* Si alguna vez usás una imagen destacada dentro del hero */
+/* Ajustar tamaño de la imagen de fondo */
 .hero-img {
-  max-width: 70%;
+  max-width: 70%; /* Se reduce el tamaño */
   height: auto;
 }
 
-/* ====== Flota ====== */
+/* Ajustar tamaño de las imágenes de la flota */
 #flota img {
-  width: 80%;
+  width: 80%; /* Reduce el tamaño */
   max-width: 300px;
   margin: 0 auto;
 }
 
-/* ====== Quiénes Somos ====== */
+/* Ajuste en la sección de Quiénes Somos */
 #quienes-somos {
   text-align: center;
   padding: 60px 20px;
 }
 
-/* ====== Botón flotante de WhatsApp ====== */
+/* Botón flotante de WhatsApp */
 .whatsapp-float {
   position: fixed;
-  bottom: 14px;
-  right: 14px;
-  width: 56px;
-  height: 56px;
+  bottom: 15px;
+  right: 15px;
+  width: 45px;
+  height: 45px;
   background-color: #25D366;
   border-radius: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
-  box-shadow: 0 8px 24px rgba(0,0,0,0.18);
-  z-index: 999; /* que quede por encima */
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
 }
 .whatsapp-float img {
-  width: 26px;
-  height: 26px;
+  width: 30px;
+  height: 30px;
 }
 
-/* Botón de WhatsApp dentro de la sección de contacto */
+/* Botón en sección contacto */
 .whatsapp-icon {
   width: 18px;
   height: 18px;
   margin-right: 8px;
 }
 
-/* ====== Legibilidad general ====== */
-body {
-  line-height: 1.6;
-  -webkit-font-smoothing: antialiased;
-  text-rendering: optimizeLegibility;
-}
-
-/* ====== Animaciones AOS ====== */
+/* Animaciones */
 [data-aos] {
   opacity: 0;
   transition-property: opacity, transform;
-}
-
-/* ====== Ajustes responsive ====== */
-@media (max-width: 640px) {
-  .logo-nav { max-height: 36px; }
-  header#inicio { padding: 48px 16px; }
 }
