@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Flota disponible de Nexus Move en Mendoza: autos y camionetas para alquiler, turismo, empresas y operaciones mineras.">
+  <meta name="theme-color" content="#0f172a">
+  <title>Flota disponible y tarifas | Nexus Move</title>
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    :root {
+      --navy:#0f172a; --navy-2:#17213a; --orange:#f97316; --orange-dark:#dc5f0c;
+      --ink:#172033; --muted:#667085; --line:#e7eaf0; --surface:#f5f7fa; --white:#fff;
+      --green:#16a34a; --shadow:0 20px 50px rgba(15,23,42,.11);
+      --font:ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+    }
+    *{box-sizing:border-box} html{scroll-behavior:smooth} body{margin:0;background:var(--surface);color:var(--ink);font-family:var(--font);line-height:1.55;-webkit-font-smoothing:antialiased}
+    a{color:inherit;text-decoration:none} img{display:block;max-width:100%}.container{width:min(1160px,calc(100% - 40px));margin:auto}
+    .topline{height:7px;background:linear-gradient(90deg,var(--orange) 0 24%,var(--navy) 24% 100%)}
+    header{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.96);border-bottom:1px solid var(--line);backdrop-filter:blur(14px)}
+    nav{min-height:82px;display:flex;align-items:center;justify-content:space-between;gap:24px}.brand{font-size:1.55rem;font-weight:950;letter-spacing:-.065em;color:var(--navy)}.brand span{color:var(--orange)}
+    .nav-actions{display:flex;align-items:center;gap:12px}.back-link{font-size:.92rem;font-weight:750;color:#4b5565}.back-link:hover{color:var(--orange)}
+    .button{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:48px;padding:12px 20px;border-radius:10px;font-weight:850;line-height:1.15;transition:transform .18s ease,background .18s ease,box-shadow .18s ease}.button:hover{transform:translateY(-2px)}
+    .button-primary{color:#fff;background:var(--orange);box-shadow:0 12px 24px rgba(249,115,22,.22)}.button-primary:hover{background:var(--orange-dark)}
+    .button-whatsapp{color:#fff;background:var(--green);box-shadow:0 12px 24px rgba(22,163,74,.2)}.button-whatsapp:hover{background:#15803d}
+    .hero{padding:72px 0 62px;background:linear-gradient(135deg,var(--navy) 0%,var(--navy-2) 70%,#253351 100%);color:#fff;overflow:hidden;position:relative}
+    .hero:after{content:"";position:absolute;right:-120px;top:-170px;width:440px;height:440px;border:80px solid rgba(249,115,22,.12);border-radius:50%}.hero-inner{position:relative;z-index:1;display:grid;grid-template-columns:1fr auto;align-items:end;gap:45px}
+    .eyebrow{margin:0 0 16px;color:#fb923c;font-size:.8rem;font-weight:900;letter-spacing:.15em;text-transform:uppercase}.hero h1{max-width:780px;margin:0;font-size:clamp(2.65rem,5.7vw,5.15rem);line-height:.96;letter-spacing:-.055em}.hero h1 span{color:#fb923c}.hero-copy{max-width:720px;margin:24px 0 0;color:#c8d0df;font-size:clamp(1rem,1.6vw,1.2rem)}
+    .hero-note{max-width:340px;padding:24px;border-left:4px solid var(--orange);background:rgba(255,255,255,.08);color:#dbe1ea}.hero-note strong{display:block;color:#fff;margin-bottom:5px}.hero-note p{margin:0;font-size:.9rem}
+    .fleet{padding:74px 0 96px}.section-head{display:flex;align-items:end;justify-content:space-between;gap:28px;margin-bottom:34px}.section-head h2{margin:0;color:var(--navy);font-size:clamp(2rem,4vw,3.2rem);letter-spacing:-.045em;line-height:1}.section-head p{max-width:520px;margin:0;color:var(--muted)}
+    .filters{display:flex;flex-wrap:wrap;gap:10px;margin:0 0 30px}.pill{padding:9px 14px;border:1px solid var(--line);border-radius:999px;background:#fff;color:#475467;font-size:.84rem;font-weight:800}.pill.active{color:#fff;background:var(--navy);border-color:var(--navy)}
+    .grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}.card{overflow:hidden;background:#fff;border:1px solid var(--line);border-radius:18px;box-shadow:var(--shadow)}
+    .card-media{position:relative;aspect-ratio:16/10;overflow:hidden;background:#dfe4ea}.card-media img{width:100%;height:100%;object-fit:cover}.card-media .portrait{object-position:center 50%}.card-media .basalt{object-position:center 60%}
+    .tag{position:absolute;left:16px;top:16px;padding:8px 11px;border-radius:999px;background:rgba(15,23,42,.9);color:#fff;font-size:.73rem;font-weight:900;letter-spacing:.06em;text-transform:uppercase;backdrop-filter:blur(8px)}
+    .card-body{padding:26px}.card-title{display:flex;align-items:start;justify-content:space-between;gap:18px}.card h3{margin:0;color:var(--navy);font-size:1.45rem;line-height:1.15;letter-spacing:-.025em}.availability{white-space:nowrap;color:var(--green);font-size:.79rem;font-weight:850}.availability:before{content:"";display:inline-block;width:8px;height:8px;margin-right:7px;border-radius:50%;background:currentColor}
+    .description{margin:13px 0 20px;color:var(--muted)}.facts{display:flex;flex-wrap:wrap;gap:9px;margin-bottom:22px}.fact{display:inline-flex;align-items:center;gap:7px;padding:8px 10px;border-radius:8px;background:#f5f7fa;color:#475467;font-size:.8rem;font-weight:750}.fact i{color:var(--orange)}
+    .card-footer{display:flex;align-items:center;justify-content:space-between;gap:18px;padding-top:20px;border-top:1px solid var(--line)}.price-label strong{display:block;color:var(--navy);font-size:1rem}.price-label span{color:var(--muted);font-size:.77rem}.card .button{min-height:44px;padding:10px 15px;font-size:.87rem}
+    .info{margin-top:30px;padding:24px 26px;border:1px solid #fed7aa;border-radius:14px;background:#fff7ed;color:#9a3412;font-size:.9rem}.info strong{color:#7c2d12}
+    .corporate{padding:72px 0;background:#fff}.corporate-panel{display:grid;grid-template-columns:1fr auto;align-items:center;gap:38px;padding:44px 48px;border-radius:18px;background:var(--navy);color:#fff}.corporate h2{margin:0;font-size:clamp(1.85rem,3.6vw,3rem);line-height:1.05;letter-spacing:-.04em}.corporate p{max-width:720px;margin:15px 0 0;color:#bac4d6}.corporate .button{min-width:230px}
+    footer{padding:46px 0 30px;background:#090f1e;color:#b4bfd1}.footer-grid{display:flex;align-items:center;justify-content:space-between;gap:28px}.footer-copy{font-size:.87rem}.footer-links{display:flex;gap:20px;font-size:.88rem;font-weight:750}.footer-links a:hover{color:#fff}
+    .floating{position:fixed;right:20px;bottom:20px;z-index:30;display:grid;place-items:center;width:58px;height:58px;border-radius:50%;background:var(--green);color:#fff;font-size:1.55rem;box-shadow:0 14px 30px rgba(22,163,74,.35)}
+    @media(max-width:820px){.hero-inner,.corporate-panel{grid-template-columns:1fr}.hero-note{max-width:none}.grid{grid-template-columns:1fr}.section-head{display:block}.section-head p{margin-top:15px}.corporate .button{justify-self:start}.back-link{display:none}}
+    @media(max-width:560px){.container{width:min(100% - 28px,1160px)}.nav-actions .button{padding:10px 13px;font-size:.82rem}.hero{padding:54px 0 48px}.fleet{padding:58px 0 72px}.card-title,.card-footer{display:block}.availability{display:block;margin-top:9px}.card .button{width:100%;margin-top:16px}.corporate-panel{padding:34px 26px}.corporate .button{width:100%}.footer-grid{display:block}.footer-links{margin-top:18px;flex-wrap:wrap}}
+  </style>
+</head>
+<body>
+  <div class="topline" aria-hidden="true"></div>
+  <header>
+    <nav class="container" aria-label="Navegación principal">
+      <a class="brand" href="./index.html" aria-label="Nexus Move, inicio">NEXUS<span>MOVE</span></a>
+      <div class="nav-actions">
+        <a class="back-link" href="./index.html">Conocer Nexus Move</a>
+        <a class="button button-whatsapp" href="https://wa.me/5492613671376?text=Hola%20Nexus%20Move%2C%20quiero%20consultar%20por%20un%20veh%C3%ADculo" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i> Consultar</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-inner">
+        <div>
+          <p class="eyebrow">Flota Nexus Move · Mendoza</p>
+          <h1>Elegí la movilidad que <span>necesitás.</span></h1>
+          <p class="hero-copy">Autos y camionetas para alquiler, turismo, empresas y operaciones que requieren vehículos confiables. Consultá disponibilidad y tarifa según tus fechas.</p>
+        </div>
+        <aside class="hero-note"><strong>Atención personalizada</strong><p>Te ayudamos a elegir el vehículo adecuado según recorrido, cantidad de pasajeros y tipo de actividad.</p></aside>
+      </div>
+    </section>
+
+    <section class="fleet">
+      <div class="container">
+        <div class="section-head">
+          <div><p class="eyebrow">Vehículos disponibles</p><h2>Nuestra flota</h2></div>
+          <p>La disponibilidad puede variar. Cada consulta se confirma de manera personalizada para ofrecerte la alternativa más adecuada.</p>
+        </div>
+        <div class="filters" aria-label="Categorías"><span class="pill active">Todos</span><span class="pill">Autos</span><span class="pill">Pick-ups 4x4</span><span class="pill">Corporativo</span><span class="pill">Turismo</span></div>
+
+        <div class="grid">
+          <article class="card">
+            <div class="card-media"><img src="img/ranger-xl-4x4.png" alt="Ford Ranger XL 4x4 de Nexus Move en Mendoza"><span class="tag">Pick-up 4x4</span></div>
+            <div class="card-body"><div class="card-title"><h3>Ford Ranger XL 4x4 2025</h3><span class="availability">Consultar disponibilidad</span></div><p class="description">Robusta y versátil para empresas, minería, turismo y recorridos que requieren capacidad 4x4.</p><div class="facts"><span class="fact"><i class="fa-solid fa-users"></i> 5 plazas</span><span class="fact"><i class="fa-solid fa-mountain-sun"></i> Tracción 4x4</span><span class="fact"><i class="fa-solid fa-helmet-safety"></i> Opción minera</span></div><div class="card-footer"><div class="price-label"><strong>Tarifa personalizada</strong><span>Según fechas, duración y servicio</span></div><a class="button button-whatsapp" href="https://wa.me/5492613671376?text=Hola%20Nexus%20Move%2C%20quiero%20consultar%20disponibilidad%20y%20tarifa%20de%20la%20Ford%20Ranger%20XL%204x4%202025" target="_blank" rel="noopener noreferrer">Consultar <i class="fa-brands fa-whatsapp"></i></a></div></div>
+          </article>
+
+          <article class="card">
+            <div class="card-media"><img src="img/s10-4x4-2017.png" alt="Chevrolet S10 4x4 2017 disponible en Nexus Move"><span class="tag">Pick-up 4x4</span></div>
+            <div class="card-body"><div class="card-title"><h3>Chevrolet S10 4x4 2017</h3><span class="availability">Consultar disponibilidad</span></div><p class="description">Una pick-up confiable para trabajo, operaciones corporativas y recorridos dentro y fuera de ruta.</p><div class="facts"><span class="fact"><i class="fa-solid fa-users"></i> 5 plazas</span><span class="fact"><i class="fa-solid fa-mountain-sun"></i> Tracción 4x4</span><span class="fact"><i class="fa-solid fa-briefcase"></i> Uso corporativo</span></div><div class="card-footer"><div class="price-label"><strong>Tarifa personalizada</strong><span>Según fechas, duración y servicio</span></div><a class="button button-whatsapp" href="https://wa.me/5492613671376?text=Hola%20Nexus%20Move%2C%20quiero%20consultar%20disponibilidad%20y%20tarifa%20de%20la%20Chevrolet%20S10%204x4%202017" target="_blank" rel="noopener noreferrer">Consultar <i class="fa-brands fa-whatsapp"></i></a></div></div>
+          </article>
+
+          <article class="card">
+            <div class="card-media"><img class="basalt" src="img/citroen-basalt.jpeg" alt="Citroën Basalt de la flota de Nexus Move"><span class="tag">SUV coupé</span></div>
+            <div class="card-body"><div class="card-title"><h3>Citroën Basalt</h3><span class="availability">Consultar disponibilidad</span></div><p class="description">Confort y espacio para turismo, traslados urbanos y movilidad corporativa en Mendoza.</p><div class="facts"><span class="fact"><i class="fa-solid fa-users"></i> 5 plazas</span><span class="fact"><i class="fa-solid fa-suitcase"></i> Buen espacio</span><span class="fact"><i class="fa-solid fa-road"></i> Ruta y ciudad</span></div><div class="card-footer"><div class="price-label"><strong>Tarifa personalizada</strong><span>Según fechas, duración y servicio</span></div><a class="button button-whatsapp" href="https://wa.me/5492613671376?text=Hola%20Nexus%20Move%2C%20quiero%20consultar%20disponibilidad%20y%20tarifa%20del%20Citro%C3%ABn%20Basalt" target="_blank" rel="noopener noreferrer">Consultar <i class="fa-brands fa-whatsapp"></i></a></div></div>
+          </article>
+
+          <article class="card">
+            <div class="card-media"><img class="portrait" src="img/renault-logan.jpeg" alt="Renault Logan de la flota de Nexus Move"><span class="tag">Sedán</span></div>
+            <div class="card-body"><div class="card-title"><h3>Renault Logan</h3><span class="availability">Consultar disponibilidad</span></div><p class="description">Cómodo, práctico y amplio para recorridos urbanos, viajes y servicios programados.</p><div class="facts"><span class="fact"><i class="fa-solid fa-users"></i> 5 plazas</span><span class="fact"><i class="fa-solid fa-suitcase"></i> Baúl amplio</span><span class="fact"><i class="fa-solid fa-building"></i> Corporativo</span></div><div class="card-footer"><div class="price-label"><strong>Tarifa personalizada</strong><span>Según fechas, duración y servicio</span></div><a class="button button-whatsapp" href="https://wa.me/5492613671376?text=Hola%20Nexus%20Move%2C%20quiero%20consultar%20disponibilidad%20y%20tarifa%20del%20Renault%20Logan" target="_blank" rel="noopener noreferrer">Consultar <i class="fa-brands fa-whatsapp"></i></a></div></div>
+          </article>
+
+          <article class="card">
+            <div class="card-media"><img class="portrait" src="img/citroen-c3.jpeg" alt="Citroën C3 de la flota de Nexus Move"><span class="tag">Compacto</span></div>
+            <div class="card-body"><div class="card-title"><h3>Citroën C3</h3><span class="availability">Consultar disponibilidad</span></div><p class="description">Ágil y confortable para ciudad, turismo y traslados cotidianos con bajo consumo.</p><div class="facts"><span class="fact"><i class="fa-solid fa-users"></i> 5 plazas</span><span class="fact"><i class="fa-solid fa-city"></i> Ideal ciudad</span><span class="fact"><i class="fa-solid fa-route"></i> Turismo</span></div><div class="card-footer"><div class="price-label"><strong>Tarifa personalizada</strong><span>Según fechas, duración y servicio</span></div><a class="button button-whatsapp" href="https://wa.me/5492613671376?text=Hola%20Nexus%20Move%2C%20quiero%20consultar%20disponibilidad%20y%20tarifa%20del%20Citro%C3%ABn%20C3" target="_blank" rel="noopener noreferrer">Consultar <i class="fa-brands fa-whatsapp"></i></a></div></div>
+          </article>
+        </div>
+
+        <div class="info"><strong>Sobre las tarifas:</strong> se cotizan según fechas, duración, kilometraje, tipo de uso y disponibilidad. La confirmación se realiza directamente por WhatsApp.</div>
+      </div>
+    </section>
+
+    <section class="corporate">
+      <div class="container"><div class="corporate-panel"><div><p class="eyebrow">Empresas y operaciones</p><h2>¿Necesitás más de un vehículo?</h2><p>Armamos soluciones de movilidad para empresas, minería, turismo y servicios programados, con seguimiento y atención directa.</p></div><a class="button button-primary" href="https://wa.me/5492613671376?text=Hola%20Nexus%20Move%2C%20quiero%20consultar%20por%20una%20soluci%C3%B3n%20de%20flota" target="_blank" rel="noopener noreferrer">Consultar por flota <i class="fa-solid fa-arrow-right"></i></a></div></div>
+    </section>
+  </main>
+
+  <footer><div class="container footer-grid"><div><a class="brand" href="./index.html">NEXUS<span>MOVE</span></a><div class="footer-copy">Movilidad para empresas, minería y turismo en Mendoza.</div></div><div class="footer-links"><a href="./index.html">Inicio</a><a href="https://www.instagram.com/nexus.move.ar/" target="_blank" rel="noopener noreferrer">Instagram</a><a href="https://wa.me/5492613671376" target="_blank" rel="noopener noreferrer">WhatsApp</a></div></div></footer>
+  <a class="floating" href="https://wa.me/5492613671376?text=Hola%20Nexus%20Move%2C%20quiero%20consultar%20por%20un%20veh%C3%ADculo" target="_blank" rel="noopener noreferrer" aria-label="Consultar por WhatsApp al +54 9 261 367-1376"><i class="fa-brands fa-whatsapp"></i></a>
+</body>
+</html>
