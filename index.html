@@ -14,12 +14,12 @@
     <div class="topline" aria-hidden="true"></div>
     <header class="site-header">
         <nav class="nav container" aria-label="Navegación principal">
-            <a class="brand" href="#inicio" aria-label="Nexus Move, inicio">NEXUS<span>MOVE</span></a>
+            <a class="brand" href="#inicio" data-area="inicio" aria-label="Nexus Move, inicio">NEXUS<span>MOVE</span></a>
             <button class="menu-button" type="button" aria-expanded="false" aria-controls="nav-links" aria-label="Abrir menú">
                 <i class="fa-solid fa-bars" aria-hidden="true"></i>
             </button>
             <div class="nav-links" id="nav-links">
-                <a href="#inicio">Inicio</a>
+                <a href="#inicio" data-area="inicio">Inicio</a>
                 <a href="#servicios" data-area="transporte">Transporte</a>
                 <a href="flota.html" data-area="rentacar">Rent a Car</a>
                 <a href="#sostenibilidad" data-area="sostenibilidad">Sostenibilidad</a>
@@ -27,14 +27,21 @@
                 <a class="button button-primary" href="#contacto">Solicitar propuesta</a>
             </div>
         </nav>
+        <nav class="mobile-area-nav container" aria-label="Secciones principales">
+            <a href="#inicio" data-area="inicio">Inicio</a>
+            <a href="#servicios" data-area="transporte">Transporte</a>
+            <a href="flota.html" data-area="rentacar">Rent a Car</a>
+            <a href="#sostenibilidad" data-area="sostenibilidad">Sostenibilidad</a>
+        </nav>
     </header>
 
     <main>
-        <section class="hero" id="inicio">
+        <section class="hero" id="inicio" data-view="inicio">
             <div class="container hero-grid">
                 <div>
-                    <p class="eyebrow">Mendoza, Argentina</p>
-                    <h1>Soluciones integrales <span>de movilidad</span></h1>
+                    <p class="eyebrow" id="hero-label">Mendoza, Argentina</p>
+                    <h1 id="hero-title" tabindex="-1">Soluciones integrales <span>de movilidad</span></h1>
+                    <p class="hero-description" id="hero-description" hidden></p>
                     <div class="hero-areas">
                         <article class="hero-area">
                             <h2><span>Nexus Move</span> Transporte</h2>
@@ -82,8 +89,7 @@
             <div class="container">
                 <div class="section-head">
                     <div>
-                        <p class="eyebrow">Nexus Move | Transporte</p>
-                        <h2 class="section-title">Transporte con chofer</h2>
+                        <h2 class="section-title">Servicios de traslado</h2>
                     </div>
                     <p class="section-copy transport-experience"><strong>Más de 17 años de experiencia en el sector.</strong> Coordinamos traslados de pasajeros con puntualidad, vehículos cuidados y atención humana.</p>
                 </div>
@@ -155,23 +161,13 @@
         </div>
 
         <div id="area-rentacar" class="area-panel" data-area-panel="rentacar" hidden>
-            <section class="rental-intro" aria-labelledby="rentacar-titulo">
-                <div class="container">
-                    <p class="eyebrow">Nexus Move | Rent a Car</p>
-                    <h2 class="section-title" id="rentacar-titulo">Alquiler de autos y camionetas en Mendoza</h2>
-                    <p class="section-copy">Elegí un vehículo y consultá la disponibilidad para tus fechas.</p>
-                </div>
-            </section>
             <div id="rentacar-embed"></div>
         </div>
 
         <section class="section sustainability area-panel" id="sostenibilidad" data-area-panel="sostenibilidad" aria-labelledby="sostenibilidad-titulo">
             <div class="container">
                 <div class="sustainability-intro">
-                    <div>
-                        <p class="eyebrow">Nuestro compromiso</p>
-                        <h2 class="section-title" id="sostenibilidad-titulo">Movilidad responsable y desarrollo sostenible</h2>
-                    </div>
+                    <h2 class="section-title" id="sostenibilidad-titulo">Nuestro compromiso</h2>
                     <p class="section-copy">La sostenibilidad forma parte de nuestra visión de crecimiento. Buscamos ofrecer una movilidad eficiente, segura y responsable mediante la gestión de la flota, el cuidado de las personas y el uso responsable de los recursos.</p>
                 </div>
 
@@ -223,7 +219,8 @@
 
                 <div class="sustainability-followup">
                     <h3>Cómo hacemos el seguimiento</h3>
-                    <p>Revisamos los datos de consumo, kilómetros y estado de las unidades para detectar desvíos y decidir qué ajustar. Buscamos ampliar este seguimiento con indicadores de mantenimiento, capacitación y objetivos de eficiencia para evaluar nuestros avances.</p>
+                    <p>Realizamos mantenimiento preventivo en nuestros vehículos para cuidar la seguridad, mantenerlos en buen estado y evitar consumos innecesarios. Revisamos los kilómetros, el combustible y los controles técnicos para detectar desvíos y decidir qué ajustar.</p>
+                    <p>Nuestros choferes ya recibieron capacitación en normas de seguridad vial, prácticas de sostenibilidad y buen trato a los pasajeros. Seguimos mejorando la forma de trabajar para favorecer recorridos más eficientes y un uso responsable de los recursos.</p>
                 </div>
             </div>
         </section>
@@ -233,7 +230,7 @@
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-brand">
-                    <a class="brand" href="#inicio">NEXUS<span>MOVE</span></a>
+                    <a class="brand" href="#inicio" data-area="inicio">NEXUS<span>MOVE</span></a>
                     <p>Soluciones integrales de movilidad en Mendoza.</p>
                 </div>
                 <div>

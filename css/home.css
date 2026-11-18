@@ -68,6 +68,7 @@ main [id] { scroll-margin-top: 100px; }
 .nav-links a { color: #4b5565; font-size: 0.94rem; font-weight: 650; transition: color 180ms ease; }
 .nav-links a:hover, .nav-links a:focus-visible { color: var(--orange-text); }
 .nav-links .button-primary, .nav-links .button-primary:hover, .nav-links .button-primary:focus-visible { color: white; }
+.mobile-area-nav { display: none; }
 .button {
     display: inline-flex;
     min-height: 49px;
@@ -90,7 +91,9 @@ main [id] { scroll-margin-top: 100px; }
 .hero-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(420px, 0.92fr); align-items: center; gap: clamp(42px, 7vw, 90px); }
 .hero h1 { margin: 0; color: var(--blue); font-size: clamp(2.6rem, 4.55vw, 4.3rem); line-height: 0.99; letter-spacing: -0.062em; }
 .hero h1 span { display: block; color: var(--orange-text); }
+.hero-description { max-width: 570px; margin: 18px 0 0; color: var(--muted); font-size: 1.08rem; }
 .hero-areas { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; margin-top: 23px; }
+.hero-areas[hidden] { display: none; }
 .hero-area { display: flex; flex-direction: column; align-items: flex-start; padding: 21px; border: 1px solid var(--line); border-top: 3px solid var(--orange); border-radius: 6px; background: white; }
 .hero-area h2 { margin: 0; color: var(--blue); font-size: 1.42rem; line-height: 1.15; }
 .hero-area h2 span { display: block; margin-bottom: 5px; color: var(--muted); font-size: .76rem; letter-spacing: .08em; text-transform: uppercase; }
@@ -181,9 +184,14 @@ main [id] { scroll-margin-top: 100px; }
 :focus-visible { outline: 3px solid var(--orange-text); outline-offset: 4px; }
 
 @media (max-width: 920px) {
-    .nav-links { display: none; position: absolute; top: 86px; left: 0; right: 0; padding: 22px 20px 28px; background: white; border-bottom: 1px solid var(--line); box-shadow: 0 18px 35px rgba(15,23,42,0.1); }
+    .nav { min-height: 66px; }
+    .nav-links { display: none; position: absolute; top: 100%; left: 0; right: 0; padding: 16px 20px 22px; background: white; border-bottom: 1px solid var(--line); box-shadow: 0 18px 35px rgba(15,23,42,0.1); }
     .nav-links.open { display: grid; }
+    .nav-links a[data-area] { display: none; }
     .nav-links .button { margin-top: 8px; }
+    .mobile-area-nav { display: grid; grid-template-columns: repeat(4, auto); justify-content: space-between; gap: 4px; border-top: 1px solid var(--line); }
+    .mobile-area-nav a { display: grid; place-items: center; min-height: 44px; padding: 0 4px; color: var(--ink); font-size: .85rem; font-weight: 750; white-space: nowrap; }
+    .mobile-area-nav a[aria-current="true"] { color: var(--orange-text); box-shadow: inset 0 -3px var(--orange-text); }
     .menu-button { display: grid; place-items: center; }
     .hero-grid { grid-template-columns: 1fr; }
     .proof-grid { grid-template-columns: 1fr; }
@@ -208,6 +216,9 @@ main [id] { scroll-margin-top: 100px; }
     .hero-area .area-link { margin-top: 9px; }
     .showcase-bar { min-height: 56px; padding-block: 6px; }
     .hero h1 { font-size: clamp(2.45rem, 9vw, 4rem); }
+    .hero[data-view="sostenibilidad"] h1 { font-size: clamp(2rem, 7.2vw, 3.4rem); }
+    .hero-description { margin-top: 12px; font-size: .98rem; }
+    .mobile-area-nav a { font-size: .8rem; }
     .hero-areas { gap: 9px; margin-top: 16px; }
     .hero-area { padding: 15px 13px; }
     .hero-area h2 { font-size: 1.2rem; }
@@ -238,10 +249,6 @@ main [id] { scroll-margin-top: 100px; }
 }
 .nav-links a[aria-current="true"] { color: var(--orange-text); }
 .hero-area.is-selected { background: #fff7ed; border-color: #fed7aa; border-top-color: var(--orange-text); }
-.rental-intro { padding: 30px 0 20px; background: #fff; }
-.rental-intro .eyebrow { margin-bottom: 8px; }
-.rental-intro .section-title { font-size: clamp(1.85rem, 4vw, 3.2rem); }
-.rental-intro .section-copy { margin-top: 12px; }
 .sustainability { padding: 64px 0 85px; background: #f4f8f6; }
 .sustainability-intro { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr); gap: 32px; align-items: end; }
 .sustainability-intro .section-copy { margin: 0; }
@@ -259,6 +266,7 @@ main [id] { scroll-margin-top: 100px; }
 .sustainability-followup { max-width: 735px; margin-top: 34px; padding-left: 17px; border-left: 3px solid #2e6a4a; }
 .sustainability-followup h3 { margin: 0 0 7px; color: var(--blue); }
 .sustainability-followup p { margin: 0; color: var(--muted); }
+.sustainability-followup p + p { margin-top: 12px; }
 @media (max-width: 760px) {
     .sustainability { padding-block: 40px 55px; }
     .sustainability-intro, .sustainability-practices, .sustainability-goals dl { grid-template-columns: 1fr; }

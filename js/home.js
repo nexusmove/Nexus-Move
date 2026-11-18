@@ -54,8 +54,8 @@ const vehicles = [
     },
     {
         title: 'Toyota Corolla',
-        facts: 'Sedán · Imagen ilustrativa',
-        alt: 'Imagen ilustrativa de un Toyota Corolla blanco, publicada por Nexus Move',
+        facts: 'Sedán · Flota Nexus Move',
+        alt: 'Toyota Corolla blanco de la flota de Nexus Move',
         src: 'img/toyota-corolla-1080.webp',
         srcset: 'img/toyota-corolla-560.webp 560w, img/toyota-corolla-1080.webp 1080w',
         imageClass: 'hero-image-corolla',
