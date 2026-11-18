@@ -53,6 +53,14 @@ const vehicles = [
         srcset: 'img/s10-4x4-2017-560.webp 560w, img/s10-4x4-2017-1120.webp 1120w',
     },
     {
+        title: 'Toyota Corolla',
+        facts: 'Sedán · Imagen ilustrativa',
+        alt: 'Imagen ilustrativa de un Toyota Corolla blanco, publicada por Nexus Move',
+        src: 'img/toyota-corolla-1080.webp',
+        srcset: 'img/toyota-corolla-560.webp 560w, img/toyota-corolla-1080.webp 1080w',
+        imageClass: 'hero-image-corolla',
+    },
+    {
         title: 'Renault Logan',
         facts: 'Sedán · 5 plazas',
         alt: 'Renault Logan de Nexus Move',
@@ -73,6 +81,7 @@ async function showVehicle(offset) {
     const vehicle = vehicles[selectedVehicle];
     const photo = new Image();
     photo.className = 'hero-image is-changing';
+    if (vehicle.imageClass) photo.classList.add(vehicle.imageClass);
     photo.alt = vehicle.alt;
     photo.sizes = firstImage.sizes;
     photo.srcset = vehicle.srcset;

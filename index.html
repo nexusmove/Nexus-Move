@@ -8,6 +8,7 @@
     <title>Nexus Move | Transporte y Rent a Car en Mendoza</title>
     <link rel="stylesheet" href="css/icons.css">
     <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="css/rental-content.css">
 </head>
 <body>
     <div class="topline" aria-hidden="true"></div>
@@ -19,9 +20,9 @@
             </button>
             <div class="nav-links" id="nav-links">
                 <a href="#inicio">Inicio</a>
-                <a href="#servicios">Transporte</a>
-                <a href="flota.html">Rent a Car</a>
-                <a href="#nosotros">Por qué elegirnos</a>
+                <a href="#servicios" data-area="transporte">Transporte</a>
+                <a href="flota.html" data-area="rentacar">Rent a Car</a>
+                <a href="#sostenibilidad" data-area="sostenibilidad">Sostenibilidad</a>
                 <a href="#proceso">Cómo trabajamos</a>
                 <a class="button button-primary" href="#contacto">Solicitar propuesta</a>
             </div>
@@ -38,12 +39,12 @@
                         <article class="hero-area">
                             <h2><span>Nexus Move</span> Transporte</h2>
                             <p>Traslados con chofer para empresas, instituciones y particulares.</p>
-                            <a class="area-link" href="#servicios">Ver servicios de transporte <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+                            <a class="area-link" href="#servicios" data-area="transporte">Ver servicios de transporte <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
                         </article>
                         <article class="hero-area">
                             <h2><span>Nexus Move</span> Rent a Car</h2>
                             <p>Alquiler de autos y camionetas para particulares y empresas.</p>
-                            <a class="area-link" href="flota.html">Ver vehículos en alquiler <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+                            <a class="area-link" href="flota.html" data-area="rentacar">Ver vehículos en alquiler <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
                         </article>
                     </div>
                 </div>
@@ -67,6 +68,8 @@
             </div>
         </section>
 
+        <p class="visually-hidden" id="area-status" role="status"></p>
+        <div id="area-transporte" class="area-panel" data-area-panel="transporte">
         <section class="proof" aria-label="Compromisos de servicio">
             <div class="container proof-grid">
                 <article class="proof-item"><span class="proof-icon"><i class="fa-solid fa-clock" aria-hidden="true"></i></span><div><strong>Puntualidad operativa</strong><span>Coordinación pensada para cada agenda.</span></div></article>
@@ -149,6 +152,81 @@
                 </div>
             </div>
         </section>
+        </div>
+
+        <div id="area-rentacar" class="area-panel" data-area-panel="rentacar" hidden>
+            <section class="rental-intro" aria-labelledby="rentacar-titulo">
+                <div class="container">
+                    <p class="eyebrow">Nexus Move | Rent a Car</p>
+                    <h2 class="section-title" id="rentacar-titulo">Alquiler de autos y camionetas en Mendoza</h2>
+                    <p class="section-copy">Elegí un vehículo y consultá la disponibilidad para tus fechas.</p>
+                </div>
+            </section>
+            <div id="rentacar-embed"></div>
+        </div>
+
+        <section class="section sustainability area-panel" id="sostenibilidad" data-area-panel="sostenibilidad" aria-labelledby="sostenibilidad-titulo">
+            <div class="container">
+                <div class="sustainability-intro">
+                    <div>
+                        <p class="eyebrow">Nuestro compromiso</p>
+                        <h2 class="section-title" id="sostenibilidad-titulo">Movilidad responsable y desarrollo sostenible</h2>
+                    </div>
+                    <p class="section-copy">La sostenibilidad forma parte de nuestra visión de crecimiento. Buscamos ofrecer una movilidad eficiente, segura y responsable mediante la gestión de la flota, el cuidado de las personas y el uso responsable de los recursos.</p>
+                </div>
+
+                <div class="sustainability-practices">
+                    <article>
+                        <h3>Eficiencia ambiental</h3>
+                        <p>Medimos nuestra huella de carbono y hacemos un seguimiento del combustible y los kilómetros recorridos. Estos datos nos ayudan a detectar consumos evitables y orientar las medidas de reducción.</p>
+                    </article>
+                    <article>
+                        <h3>Seguridad y prevención</h3>
+                        <p>Priorizamos el mantenimiento preventivo, el control de las revisiones técnicas y la capacitación de conductores para cuidar a quienes viajan y prevenir riesgos en el camino.</p>
+                    </article>
+                    <article>
+                        <h3>Compromiso con las personas</h3>
+                        <p>Impulsamos el empleo formal, el desarrollo profesional y la mejora continua de nuestras prácticas laborales.</p>
+                    </article>
+                    <article>
+                        <h3>Innovación y gestión responsable</h3>
+                        <p>Usamos herramientas de seguimiento y gestión de flota para planificar recorridos, revisar el desempeño de las unidades y mejorar la calidad del servicio.</p>
+                    </article>
+                </div>
+
+                <div class="sustainability-goals">
+                    <h3>Los ODS que guían nuestro trabajo</h3>
+                    <p>Relacionamos nuestras prácticas con cinco Objetivos de Desarrollo Sostenible de la Agenda 2030.</p>
+                    <dl>
+                        <div>
+                            <dt><a href="https://sdgs.un.org/goals/goal3" target="_blank" rel="noopener noreferrer"><span class="goal-number">ODS 3</span> Salud y bienestar</a></dt>
+                            <dd>Seguridad vial, mantenimiento de las unidades y prevención de accidentes.</dd>
+                        </div>
+                        <div>
+                            <dt><a href="https://sdgs.un.org/goals/goal8" target="_blank" rel="noopener noreferrer"><span class="goal-number">ODS 8</span> Trabajo decente y crecimiento económico</a></dt>
+                            <dd>Empleo formal, capacitación y mejora de las prácticas laborales.</dd>
+                        </div>
+                        <div>
+                            <dt><a href="https://sdgs.un.org/goals/goal9" target="_blank" rel="noopener noreferrer"><span class="goal-number">ODS 9</span> Industria, innovación e infraestructura</a></dt>
+                            <dd>Tecnología para la gestión de la flota y planificación de la renovación de unidades.</dd>
+                        </div>
+                        <div>
+                            <dt><a href="https://sdgs.un.org/goals/goal11" target="_blank" rel="noopener noreferrer"><span class="goal-number">ODS 11</span> Ciudades y comunidades sostenibles</a></dt>
+                            <dd>Traslados coordinados y planificación para evitar recorridos innecesarios.</dd>
+                        </div>
+                        <div>
+                            <dt><a href="https://sdgs.un.org/goals/goal13" target="_blank" rel="noopener noreferrer"><span class="goal-number">ODS 13</span> Acción por el clima</a></dt>
+                            <dd>Medición de la huella de carbono, control de consumos y búsqueda de mejoras para reducir emisiones.</dd>
+                        </div>
+                    </dl>
+                </div>
+
+                <div class="sustainability-followup">
+                    <h3>Cómo hacemos el seguimiento</h3>
+                    <p>Revisamos los datos de consumo, kilómetros y estado de las unidades para detectar desvíos y decidir qué ajustar. Buscamos ampliar este seguimiento con indicadores de mantenimiento, capacitación y objetivos de eficiencia para evaluar nuestros avances.</p>
+                </div>
+            </div>
+        </section>
     </main>
 
     <footer class="site-footer">
@@ -160,7 +238,7 @@
                 </div>
                 <div>
                     <h3>Nuestras áreas</h3>
-                    <div class="footer-links"><a href="#servicios">Transporte</a><a href="flota.html">Rent a Car</a></div>
+                    <div class="footer-links"><a href="#servicios" data-area="transporte">Transporte</a><a href="flota.html" data-area="rentacar">Rent a Car</a><a href="#sostenibilidad" data-area="sostenibilidad">Sostenibilidad</a></div>
                 </div>
                 <div>
                     <h3>Conectemos</h3>
@@ -174,5 +252,7 @@
     <a class="floating-contact" href="https://wa.me/5492613671376" target="_blank" rel="noopener noreferrer" aria-label="Contactar a Nexus Move por WhatsApp al +54 9 261 367-1376"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i></a>
 
     <script src="js/home.js"></script>
+    <script src="js/rentacar.js"></script>
+    <script src="js/areas.js"></script>
 </body>
 </html>
