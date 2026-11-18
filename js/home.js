@@ -1,20 +1,3 @@
-const menuButton = document.querySelector('.menu-button');
-const navLinks = document.querySelector('#nav-links');
-menuButton.addEventListener('click', () => {
-    const open = navLinks.classList.toggle('open');
-    menuButton.setAttribute('aria-expanded', String(open));
-    menuButton.setAttribute('aria-label', open ? 'Cerrar menú' : 'Abrir menú');
-    menuButton.querySelector('i').className = open ? 'fa-solid fa-xmark' : 'fa-solid fa-bars';
-});
-navLinks.addEventListener('click', (event) => {
-    if (event.target.closest('a')) {
-        navLinks.classList.remove('open');
-        menuButton.setAttribute('aria-expanded', 'false');
-        menuButton.setAttribute('aria-label', 'Abrir menú');
-        menuButton.querySelector('i').className = 'fa-solid fa-bars';
-    }
-});
-
 const showcase = document.querySelector('.hero-visual');
 const frame = showcase.querySelector('.hero-image-wrap');
 const caption = showcase.querySelector('.showcase-caption');

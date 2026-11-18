@@ -7,20 +7,33 @@
   <meta name="theme-color" content="#0f172a">
   <title>Alquiler de autos y camionetas en Mendoza | Nexus Move Rent a Car</title>
   <link rel="stylesheet" href="css/icons.css">
+  <link rel="stylesheet" href="css/navigation.css">
   <link rel="stylesheet" href="css/rentacar.css">
   <link rel="stylesheet" href="css/rental-content.css">
 </head>
 <body>
   <div class="topline" aria-hidden="true"></div>
-  <header>
-    <nav class="container" aria-label="Navegación principal">
-      <a class="brand" href="./index.html" aria-label="Nexus Move, inicio">NEXUS<span>MOVE</span></a>
-      <div class="nav-actions">
-        <a class="area-nav-link" href="./index.html#servicios">Transporte</a>
-        <a class="area-nav-link" href="./flota.html" aria-current="page">Rent a Car</a>
-        <a class="button button-whatsapp" href="https://wa.me/5492613671376?text=Hola%20Nexus%20Move%2C%20quiero%20consultar%20por%20un%20veh%C3%ADculo" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i> Consultar</a>
-      </div>
-    </nav>
+  <header class="site-header">
+      <nav class="nav container" aria-label="Navegación principal">
+          <a class="brand" href="./index.html" aria-label="Nexus Move, inicio">NEXUS<span>MOVE</span></a>
+          <button class="menu-button" type="button" aria-expanded="false" aria-controls="nav-links" aria-label="Abrir menú">
+              <i class="fa-solid fa-bars" aria-hidden="true"></i>
+          </button>
+          <div class="nav-links" id="nav-links">
+              <a href="./index.html">Inicio</a>
+              <a href="./index.html?area=transporte">Transporte</a>
+              <a href="#flota" aria-current="page">Rent a Car</a>
+              <a href="./index.html?area=sostenibilidad">Sostenibilidad</a>
+              <a href="./index.html?area=transporte#proceso">Cómo trabajamos</a>
+              <a class="button button-whatsapp" href="https://wa.me/5492613671376?text=Hola%20Nexus%20Move%2C%20quiero%20consultar%20por%20un%20veh%C3%ADculo" target="_blank" rel="noopener noreferrer">Consultar alquiler</a>
+          </div>
+      </nav>
+      <nav class="mobile-area-nav container" aria-label="Secciones principales">
+          <a href="./index.html">Inicio</a>
+          <a href="./index.html?area=transporte">Transporte</a>
+          <a href="#flota" aria-current="page">Rent a Car</a>
+          <a href="./index.html?area=sostenibilidad">Sostenibilidad</a>
+      </nav>
   </header>
 
   <main>
@@ -196,8 +209,9 @@
     </div>
   </main>
 
-  <footer><div class="container footer-grid"><div><a class="brand" href="./index.html">NEXUS<span>MOVE</span></a><div class="footer-copy">Soluciones integrales de movilidad en Mendoza.</div></div><div class="footer-links"><a href="./index.html#servicios">Transporte</a><a href="#flota">Flota</a><a href="https://www.instagram.com/nexus.move.ar/" target="_blank" rel="noopener noreferrer">Instagram</a><a href="https://wa.me/5492613671376" target="_blank" rel="noopener noreferrer">WhatsApp</a></div></div></footer>
+  <footer><div class="container footer-grid"><div><a class="brand" href="./index.html">NEXUS<span>MOVE</span></a><div class="footer-copy">Soluciones integrales de movilidad en Mendoza.</div></div><div class="footer-links"><a href="./index.html#servicios">Transporte</a><a href="#flota">Flota</a><a href="./index.html?area=sostenibilidad">Sostenibilidad</a><a href="https://www.instagram.com/nexus.move.ar/" target="_blank" rel="noopener noreferrer">Instagram</a><a href="https://wa.me/5492613671376" target="_blank" rel="noopener noreferrer">WhatsApp</a></div></div></footer>
   <a class="floating" href="https://wa.me/5492613671376?text=Hola%20Nexus%20Move%2C%20quiero%20consultar%20por%20un%20veh%C3%ADculo" target="_blank" rel="noopener noreferrer" aria-label="Consultar por WhatsApp al +54 9 261 367-1376"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i></a>
+  <script src="js/navigation.js"></script>
   <script src="js/rentacar.js"></script>
 </body>
 </html>
