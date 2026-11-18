@@ -26,6 +26,8 @@
 .fa-calendar-check::before { content: '\f274'; }
 .fa-car-side::before { content: '\f5e4'; }
 .fa-clock::before { content: '\f017'; }
+.fa-gas-pump::before { content: '\f52f'; }
+.fa-gears::before { content: '\f085'; }
 .fa-hand-holding-medical::before { content: '\e05c'; }
 .fa-headset::before { content: '\f590'; }
 .fa-heart-pulse::before { content: '\f21e'; }
@@ -34,6 +36,7 @@
 .fa-mountain-sun::before { content: '\e52f'; }
 .fa-road::before { content: '\f018'; }
 .fa-route::before { content: '\f4d7'; }
+.fa-suitcase::before { content: '\f0f2'; }
 .fa-user-shield::before { content: '\f505'; }
 .fa-users::before { content: '\f0c0'; }
 .fa-whatsapp::before { content: '\f232'; }
