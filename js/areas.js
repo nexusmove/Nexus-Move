@@ -127,7 +127,8 @@ async function showArea(area, updateAddress = false) {
         link.closest('.hero-area')?.classList.toggle('is-selected', current);
     }
 
-    areaStatus.textContent = changed ? heroTitle.textContent : '';
+    const view = sectionViews[area];
+    areaStatus.textContent = changed ? view.title + ' ' + view.accent : '';
     if (updateAddress && changed && heroTitle.getBoundingClientRect().top < document.querySelector('.site-header').getBoundingClientRect().bottom) {
         window.scrollTo({ top: 0, behavior: 'instant' });
     }
