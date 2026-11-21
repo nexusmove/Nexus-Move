@@ -33,7 +33,7 @@
           <div class="nav-links" id="nav-links">
               <a href="./index.html">Inicio</a>
               <a href="./index.html?area=transporte">Transporte</a>
-              <a href="#flota" aria-current="page">Rent a Car</a>
+              <a href="#reservas" aria-current="page">Rent a Car</a>
               <a href="./index.html?area=sostenibilidad">Sostenibilidad</a>
               <a href="./index.html?area=transporte#proceso">Cómo trabajamos</a>
               <a class="button button-whatsapp" href="https://wa.me/5492613671376?text=Hola%20Nexus%20Move%2C%20quiero%20consultar%20por%20un%20veh%C3%ADculo" target="_blank" rel="noopener noreferrer">Consultar alquiler</a>
@@ -42,7 +42,7 @@
       <nav class="mobile-area-nav container" aria-label="Secciones principales">
           <a href="./index.html">Inicio</a>
           <a href="./index.html?area=transporte">Transporte</a>
-          <a href="#flota" aria-current="page">Rent a Car</a>
+          <a href="#reservas" aria-current="page">Rent a Car</a>
           <a href="./index.html?area=sostenibilidad">Sostenibilidad</a>
       </nav>
   </header>
@@ -62,18 +62,71 @@
     <div class="rentacar-content" id="rentacar-content">
     <nav class="rental-nav" aria-label="Secciones de Rent a Car">
       <div class="container rental-tabs">
+        <a id="tab-reservas" href="#reservas">Fechas y disponibilidad</a>
         <a id="tab-flota" href="#flota">Flota</a>
+        <a id="tab-nosotros" href="#rental-nosotros">Nosotros</a>
         <a id="tab-adicionales" href="#adicionales">Adicionales</a>
         <a id="tab-como-alquilar" href="#como-alquilar">Cómo alquilar</a>
-        <a id="tab-preguntas-frecuentes" href="#preguntas-frecuentes">Preguntas frecuentes</a>
+        <a id="tab-preguntas-frecuentes" href="#preguntas-frecuentes">FAQ · Preguntas frecuentes</a>
       </div>
     </nav>
+
+    <section class="rental-panel rental-booking" id="reservas" aria-labelledby="reservas-titulo">
+      <div class="container">
+        <div class="section-head">
+          <div><p class="booking-eyebrow">Nexus Move | Rent a Car</p><h2 id="reservas-titulo">Planificá tu alquiler</h2></div>
+          <p>Elegí las fechas de entrega y devolución para preparar tu consulta de alquiler en Mendoza.</p>
+        </div>
+        <div class="booking-notice" id="booking-notice">
+          <i class="fa-solid fa-calendar-check" aria-hidden="true"></i>
+          <div><strong>Flota ocupada por el momento</strong><p>Actualmente no tenemos unidades disponibles. Las reservas online están cerradas; podés consultar por próximas opciones.</p></div>
+        </div>
+        <form class="booking-form" id="rental-booking-form" aria-labelledby="reservas-titulo" aria-describedby="booking-notice booking-help" novalidate hidden>
+          <div class="booking-fields">
+            <fieldset>
+              <legend><i class="fa-solid fa-calendar-check" aria-hidden="true"></i> Entrega del vehículo</legend>
+              <label for="pickup-date">Fecha de entrega<input id="pickup-date" name="pickup-date" type="date" required></label>
+              <label for="pickup-time">Hora de entrega<input id="pickup-time" name="pickup-time" type="time" value="08:00" required></label>
+            </fieldset>
+            <fieldset>
+              <legend><i class="fa-solid fa-calendar-check" aria-hidden="true"></i> Devolución del vehículo</legend>
+              <label for="return-date">Fecha de devolución<input id="return-date" name="return-date" type="date" required></label>
+              <label for="return-time">Hora de devolución<input id="return-time" name="return-time" type="time" value="18:00" required></label>
+            </fieldset>
+            <div class="booking-vehicle">
+              <label for="booking-vehicle">Vehículo de preferencia</label>
+              <select id="booking-vehicle" name="vehicle">
+                <option value="any">Cualquier vehículo</option>
+                <option value="ranger">Ford Ranger XL 4x4 2025</option>
+                <option value="s10">Chevrolet S10 4x4</option>
+                <option value="basalt">Citroën Basalt</option>
+                <option value="logan">Renault Logan</option>
+                <option value="corolla">Toyota Corolla</option>
+              </select>
+              <button class="button button-primary" type="submit">Consultar disponibilidad</button>
+            </div>
+          </div>
+          <p class="booking-help" id="booking-help">Los horarios corresponden a Mendoza, Argentina. Esta consulta no genera una reserva ni realiza cobros.</p>
+          <p class="booking-error" id="booking-error" role="alert" hidden></p>
+        </form>
+        <div class="booking-result" id="booking-result" tabindex="-1" aria-labelledby="booking-result-title" hidden>
+          <p class="booking-result-status" role="status" id="booking-result-title">Sin disponibilidad para reservar</p>
+          <p>Por el momento toda nuestra flota está ocupada. No podemos confirmar una reserva para las fechas seleccionadas.</p>
+          <dl class="booking-summary">
+            <div><dt>Entrega</dt><dd id="booking-pickup-summary"></dd></div>
+            <div><dt>Devolución</dt><dd id="booking-return-summary"></dd></div>
+            <div><dt>Vehículo</dt><dd id="booking-vehicle-summary"></dd></div>
+          </dl>
+          <a class="button button-whatsapp" id="booking-contact" target="_blank" rel="noopener noreferrer">Consultar otras opciones <i class="fa-brands fa-whatsapp" aria-hidden="true"></i></a>
+        </div>
+      </div>
+    </section>
 
     <section class="rental-panel fleet" id="flota" aria-labelledby="flota-titulo">
       <div class="container">
         <div class="section-head">
           <h2 id="flota-titulo">Nuestra flota</h2>
-          <p>La disponibilidad puede variar. Cada consulta se confirma de manera personalizada para ofrecerte la alternativa más adecuada.</p>
+          <p>Conocé nuestros autos y camionetas. Por el momento toda la flota está ocupada y no hay unidades disponibles para reservar.</p>
         </div>
         <div class="fleet-filters" role="group" aria-label="Filtrar por tipo de vehículo" hidden>
           <button type="button" data-filter="todos" aria-pressed="true">Todos</button>
@@ -84,22 +137,22 @@
         <div class="grid">
           <article class="card" data-vehicle="4x4">
             <div class="card-media"><img src="img/ranger-xl-4x4-1120.webp" srcset="img/ranger-xl-4x4-560.webp 560w, img/ranger-xl-4x4-1120.webp 1120w" sizes="(max-width: 560px) calc(100vw - 28px), (max-width: 820px) calc(100vw - 40px), (max-width: 1200px) calc((100vw - 64px) / 2), 568px" width="1120" height="1400" loading="lazy" decoding="async" alt="Ford Ranger XL 4x4 de Nexus Move en Mendoza"><span class="tag">Pick-up 4x4</span></div>
-            <div class="card-body"><div class="card-title"><h3>Ford Ranger XL 4x4 2025</h3><span class="availability">Consultar disponibilidad</span></div><p class="description">Robusta y versátil para empresas, minería, turismo y recorridos que requieren capacidad 4x4.</p><div class="facts"><span class="fact"><i class="fa-solid fa-users"></i> 5 plazas</span><span class="fact"><i class="fa-solid fa-mountain-sun"></i> Tracción 4x4</span><span class="fact"><i class="fa-solid fa-helmet-safety"></i> Opción minera</span><span class="fact"><i class="fa-solid fa-gas-pump" aria-hidden="true"></i> Gasoil</span></div><div class="card-footer"><div class="price-label"><strong>Tarifa personalizada</strong><span>Según fechas, duración y servicio</span></div><a class="button button-whatsapp" href="https://wa.me/5492613671376?text=Hola%20Nexus%20Move%2C%20quiero%20consultar%20disponibilidad%20y%20tarifa%20de%20la%20Ford%20Ranger%20XL%204x4%202025" target="_blank" rel="noopener noreferrer">Consultar <i class="fa-brands fa-whatsapp" aria-hidden="true"></i></a></div></div>
+            <div class="card-body"><div class="card-title"><h3>Ford Ranger XL 4x4 2025</h3><span class="availability">Sin disponibilidad</span></div><p class="description">Robusta y versátil para empresas, minería, turismo y recorridos que requieren capacidad 4x4.</p><div class="facts"><span class="fact"><i class="fa-solid fa-users"></i> 5 plazas</span><span class="fact"><i class="fa-solid fa-mountain-sun"></i> Tracción 4x4</span><span class="fact"><i class="fa-solid fa-helmet-safety"></i> Opción minera</span><span class="fact"><i class="fa-solid fa-gas-pump" aria-hidden="true"></i> Gasoil</span></div><div class="card-footer"><div class="price-label"><strong>Tarifa personalizada</strong><span>Según fechas, duración y servicio</span></div><a class="button button-whatsapp" href="https://wa.me/5492613671376?text=Hola%20Nexus%20Move%2C%20quiero%20consultar%20disponibilidad%20y%20tarifa%20de%20la%20Ford%20Ranger%20XL%204x4%202025" target="_blank" rel="noopener noreferrer">Consultar <i class="fa-brands fa-whatsapp" aria-hidden="true"></i></a></div></div>
           </article>
 
           <article class="card" data-vehicle="4x4">
             <div class="card-media"><img src="img/s10-4x4-2017-1120.webp" srcset="img/s10-4x4-2017-560.webp 560w, img/s10-4x4-2017-1120.webp 1120w" sizes="(max-width: 560px) calc(100vw - 28px), (max-width: 820px) calc(100vw - 40px), (max-width: 1200px) calc((100vw - 64px) / 2), 568px" width="1120" height="747" loading="lazy" decoding="async" alt="Chevrolet S10 4x4 disponible en Nexus Move"><span class="tag">Pick-up 4x4</span></div>
-            <div class="card-body"><div class="card-title"><h3>Chevrolet S10 4x4</h3><span class="availability">Consultar disponibilidad</span></div><p class="description">Una pick-up confiable para trabajo, operaciones corporativas y recorridos dentro y fuera de ruta.</p><div class="facts"><span class="fact"><i class="fa-solid fa-users"></i> 5 plazas</span><span class="fact"><i class="fa-solid fa-mountain-sun"></i> Tracción 4x4</span><span class="fact"><i class="fa-solid fa-briefcase"></i> Uso corporativo</span><span class="fact"><i class="fa-solid fa-gas-pump" aria-hidden="true"></i> Gasoil</span></div><div class="card-footer"><div class="price-label"><strong>Tarifa personalizada</strong><span>Según fechas, duración y servicio</span></div><a class="button button-whatsapp" href="https://wa.me/5492613671376?text=Hola%20Nexus%20Move%2C%20quiero%20consultar%20disponibilidad%20y%20tarifa%20de%20la%20Chevrolet%20S10%204x4" target="_blank" rel="noopener noreferrer">Consultar <i class="fa-brands fa-whatsapp" aria-hidden="true"></i></a></div></div>
+            <div class="card-body"><div class="card-title"><h3>Chevrolet S10 4x4</h3><span class="availability">Sin disponibilidad</span></div><p class="description">Una pick-up confiable para trabajo, operaciones corporativas y recorridos dentro y fuera de ruta.</p><div class="facts"><span class="fact"><i class="fa-solid fa-users"></i> 5 plazas</span><span class="fact"><i class="fa-solid fa-mountain-sun"></i> Tracción 4x4</span><span class="fact"><i class="fa-solid fa-briefcase"></i> Uso corporativo</span><span class="fact"><i class="fa-solid fa-gas-pump" aria-hidden="true"></i> Gasoil</span></div><div class="card-footer"><div class="price-label"><strong>Tarifa personalizada</strong><span>Según fechas, duración y servicio</span></div><a class="button button-whatsapp" href="https://wa.me/5492613671376?text=Hola%20Nexus%20Move%2C%20quiero%20consultar%20disponibilidad%20y%20tarifa%20de%20la%20Chevrolet%20S10%204x4" target="_blank" rel="noopener noreferrer">Consultar <i class="fa-brands fa-whatsapp" aria-hidden="true"></i></a></div></div>
           </article>
 
           <article class="card" data-vehicle="auto">
             <div class="card-media"><img src="img/citroen-basalt-fleet-v2-1120.webp" srcset="img/citroen-basalt-fleet-v2-560.webp 560w, img/citroen-basalt-fleet-v2-1120.webp 1120w" sizes="(max-width: 560px) calc(100vw - 28px), (max-width: 820px) calc(100vw - 40px), (max-width: 1200px) calc((100vw - 64px) / 2), 568px" width="1120" height="560" loading="lazy" decoding="async" alt="Flota de Citroën Basalt gris oscuro, gris claro y blanco de Nexus Move"><span class="tag">SUV coupé</span></div>
-            <div class="card-body"><div class="card-title"><h3>Citroën Basalt</h3><span class="availability">Consultar disponibilidad</span></div><p class="description">Varias unidades en gris oscuro, gris claro y blanco para turismo, traslados urbanos y movilidad corporativa.</p><div class="facts"><span class="fact"><i class="fa-solid fa-users"></i> 5 plazas</span><span class="fact"><i class="fa-solid fa-car-side"></i> Varias unidades</span><span class="fact"><i class="fa-solid fa-road"></i> Ruta y ciudad</span><span class="fact"><i class="fa-solid fa-gas-pump" aria-hidden="true"></i> Nafta</span></div><div class="card-footer"><div class="price-label"><strong>Tarifa personalizada</strong><span>Según fechas, duración y servicio</span></div><a class="button button-whatsapp" href="https://wa.me/5492613671376?text=Hola%20Nexus%20Move%2C%20quiero%20consultar%20disponibilidad%20y%20tarifa%20del%20Citro%C3%ABn%20Basalt" target="_blank" rel="noopener noreferrer">Consultar <i class="fa-brands fa-whatsapp" aria-hidden="true"></i></a></div></div>
+            <div class="card-body"><div class="card-title"><h3>Citroën Basalt</h3><span class="availability">Sin disponibilidad</span></div><p class="description">Varias unidades en gris oscuro, gris claro y blanco para turismo, traslados urbanos y movilidad corporativa.</p><div class="facts"><span class="fact"><i class="fa-solid fa-users"></i> 5 plazas</span><span class="fact"><i class="fa-solid fa-car-side"></i> Varias unidades</span><span class="fact"><i class="fa-solid fa-road"></i> Ruta y ciudad</span><span class="fact"><i class="fa-solid fa-gas-pump" aria-hidden="true"></i> Nafta</span></div><div class="card-footer"><div class="price-label"><strong>Tarifa personalizada</strong><span>Según fechas, duración y servicio</span></div><a class="button button-whatsapp" href="https://wa.me/5492613671376?text=Hola%20Nexus%20Move%2C%20quiero%20consultar%20disponibilidad%20y%20tarifa%20del%20Citro%C3%ABn%20Basalt" target="_blank" rel="noopener noreferrer">Consultar <i class="fa-brands fa-whatsapp" aria-hidden="true"></i></a></div></div>
           </article>
 
           <article class="card" data-vehicle="auto">
             <div class="card-media"><img src="img/renault-logan-fleet-v2-1120.webp" srcset="img/renault-logan-fleet-v2-560.webp 560w, img/renault-logan-fleet-v2-1120.webp 1120w" sizes="(max-width: 560px) calc(100vw - 28px), (max-width: 820px) calc(100vw - 40px), (max-width: 1200px) calc((100vw - 64px) / 2), 568px" width="1120" height="560" loading="lazy" decoding="async" alt="Flota de Renault Logan blanco, gris oscuro y negro de Nexus Move"><span class="tag">Sedán</span></div>
-            <div class="card-body"><div class="card-title"><h3>Renault Logan</h3><span class="availability">Consultar disponibilidad</span></div><p class="description">Varias unidades en blanco, gris oscuro y negro, cómodas y amplias para recorridos urbanos, viajes y servicios programados.</p><div class="facts"><span class="fact"><i class="fa-solid fa-users"></i> 5 plazas</span><span class="fact"><i class="fa-solid fa-car-side"></i> Varias unidades</span><span class="fact"><i class="fa-solid fa-building"></i> Corporativo</span><span class="fact"><i class="fa-solid fa-gas-pump" aria-hidden="true"></i> Nafta</span></div><div class="card-footer"><div class="price-label"><strong>Tarifa personalizada</strong><span>Según fechas, duración y servicio</span></div><a class="button button-whatsapp" href="https://wa.me/5492613671376?text=Hola%20Nexus%20Move%2C%20quiero%20consultar%20disponibilidad%20y%20tarifa%20del%20Renault%20Logan" target="_blank" rel="noopener noreferrer">Consultar <i class="fa-brands fa-whatsapp" aria-hidden="true"></i></a></div></div>
+            <div class="card-body"><div class="card-title"><h3>Renault Logan</h3><span class="availability">Sin disponibilidad</span></div><p class="description">Varias unidades en blanco, gris oscuro y negro, cómodas y amplias para recorridos urbanos, viajes y servicios programados.</p><div class="facts"><span class="fact"><i class="fa-solid fa-users"></i> 5 plazas</span><span class="fact"><i class="fa-solid fa-car-side"></i> Varias unidades</span><span class="fact"><i class="fa-solid fa-building"></i> Corporativo</span><span class="fact"><i class="fa-solid fa-gas-pump" aria-hidden="true"></i> Nafta</span></div><div class="card-footer"><div class="price-label"><strong>Tarifa personalizada</strong><span>Según fechas, duración y servicio</span></div><a class="button button-whatsapp" href="https://wa.me/5492613671376?text=Hola%20Nexus%20Move%2C%20quiero%20consultar%20disponibilidad%20y%20tarifa%20del%20Renault%20Logan" target="_blank" rel="noopener noreferrer">Consultar <i class="fa-brands fa-whatsapp" aria-hidden="true"></i></a></div></div>
           </article>
           <article class="card" data-vehicle="auto">
             <div class="card-media">
@@ -109,7 +162,7 @@
             <div class="card-body">
               <div class="card-title">
                 <h3>Toyota Corolla</h3>
-                <span class="availability">Consultar disponibilidad</span>
+                <span class="availability">Sin disponibilidad</span>
               </div>
               <p class="description">Sedán ejecutivo de cuatro puertas, cómodo para viajes de trabajo y escapadas por Mendoza.</p>
               <div class="facts" aria-label="Características del Toyota Corolla">
@@ -127,7 +180,26 @@
           </article>
         </div>
 
-        <div class="info"><strong>Sobre las tarifas:</strong> se cotizan según fechas, duración, kilometraje, tipo de uso y disponibilidad. La confirmación se realiza directamente por WhatsApp.</div>
+        <div class="info"><strong>Sin disponibilidad por el momento.</strong> Las reservas online están cerradas. Podés contactarnos para consultar por próximas opciones y condiciones de alquiler.</div>
+      </div>
+    </section>
+
+    <section class="rental-panel" id="rental-nosotros" aria-labelledby="nosotros-titulo">
+      <div class="container">
+        <div class="section-head">
+          <h2 id="nosotros-titulo">Somos Nexus Move</h2>
+          <p>Una sola marca, dos formas de acompañarte: transporte con chofer y alquiler de autos y camionetas en Mendoza.</p>
+        </div>
+        <div class="rental-story">
+          <p class="rental-story-lead">Detrás de cada viaje hay una persona, una historia y un motivo para llegar.</p>
+          <p>Nuestra experiencia de más de 17 años en el transporte de pasajeros nos enseñó que un buen servicio empieza mucho antes de poner el vehículo en marcha: empieza por escuchar, cumplir lo acordado y tratar a cada persona con respeto.</p>
+          <p>En Nexus Move llevamos esa misma forma de trabajar al alquiler de autos y camionetas. Ya sea por trabajo, unas vacaciones o una necesidad cotidiana, queremos que puedas organizar tu viaje con información clara y alguien del otro lado para acompañarte.</p>
+        </div>
+        <div class="rental-detail-grid">
+          <article class="rental-detail"><h3>Te escuchamos</h3><p>No todos los viajes son iguales. Nos contás qué necesitás y te orientamos según las personas que viajan, el equipaje y el recorrido.</p></article>
+          <article class="rental-detail"><h3>Cuidado de la flota</h3><p>Realizamos mantenimiento preventivo y un seguimiento de los controles técnicos de cada unidad para favorecer una operación segura y eficiente.</p></article>
+          <article class="rental-detail"><h3>Buen trato, de principio a fin</h3><p>La confianza se cuida con respuestas claras, atención cercana y respeto por tu tiempo. Esa es la forma en la que queremos acompañarte.</p></article>
+        </div>
       </div>
     </section>
 
@@ -187,28 +259,52 @@
         </div>
         <div class="rental-faq">
           <details>
-            <summary>¿Cuándo conviene consultar por un vehículo?</summary>
-            <p>Cuando tengas las fechas de retiro y devolución. Para fines de semana largos o temporada alta, conviene consultar con anticipación.</p>
+            <summary>¿Hay vehículos disponibles en este momento?</summary>
+            <p>Por el momento toda nuestra flota está ocupada. El formulario permite elegir fechas para preparar una consulta, pero no confirma disponibilidad ni genera una reserva.</p>
           </details>
           <details>
-            <summary>¿Qué datos necesito para pedir una cotización?</summary>
-            <p>Indicá fechas, horarios, destino, cantidad de pasajeros y el vehículo o tipo de vehículo que preferís.</p>
+            <summary>¿Elegir las fechas confirma mi reserva?</summary>
+            <p>No. Seleccionar fechas o enviar una consulta por WhatsApp no confirma un alquiler. Cualquier futura reserva requiere que Nexus Move confirme la disponibilidad, la tarifa y las condiciones de forma expresa.</p>
           </details>
           <details>
-            <summary>¿Qué documentación y garantía necesito?</summary>
-            <p>Pedí que te confirmen qué documentación requiere cada conductor y qué garantía, medio de pago y condiciones aplican a tu alquiler.</p>
+            <summary>¿Qué tengo que enviarte para organizar el alquiler?</summary>
+            <p>Las fechas y los horarios de entrega y devolución, cuántas personas viajan, el equipaje y el recorrido que tenés pensado. Si necesitás un conductor adicional o equipamiento especial, incluilo desde el primer mensaje para recibir una propuesta completa.</p>
           </details>
           <details>
-            <summary>¿Qué incluye la tarifa?</summary>
-            <p>El valor depende de las fechas, la duración, el kilometraje y el uso. Al recibir la cotización, confirmá la cobertura, el kilometraje incluido y si hay cargos por adicionales.</p>
+            <summary>¿Qué necesito para alquilar y poder conducir?</summary>
+            <p>La edad mínima para conducir es de 25 años y necesitás una licencia de conducir vigente. Como garantía, solicitamos una tarjeta de crédito a nombre del titular de la reserva. Si va a manejar otra persona, también debe cumplir los requisitos y quedar autorizada.</p>
           </details>
           <details>
-            <summary>¿Dónde retiro y devuelvo el vehículo?</summary>
-            <p>Consultá los lugares y horarios disponibles para tu viaje. Si necesitás devolverlo en un punto distinto del retiro, avisalo al cotizar.</p>
+            <summary>¿La garantía es lo mismo que pagar el alquiler?</summary>
+            <p>No. El alquiler paga el uso del vehículo; la garantía respalda posibles daños, faltantes u otros conceptos previstos en las condiciones acordadas. Para la garantía necesitás una tarjeta de crédito a nombre del titular de la reserva. El monto se informa antes de confirmar el alquiler.</p>
           </details>
           <details>
-            <summary>¿Puedo circular por caminos de ripio o salir de la provincia?</summary>
-            <p>Compartí el recorrido previsto antes de confirmar. Consultá qué vehículo es adecuado y qué autorizaciones o límites de uso aplican.</p>
+            <summary>¿Qué significa la franquicia de una cobertura?</summary>
+            <p>Es el importe que puede quedar a cargo de quien alquila ante un daño cubierto, según las condiciones del seguro. Antes de contratar, revisá el monto, los riesgos cubiertos y las exclusiones. Tener cobertura no significa que cualquier daño o uso esté incluido.</p>
+          </details>
+          <details>
+            <summary>¿Podemos coordinar la entrega donde me hospedo o llego?</summary>
+            <p>Contanos qué punto y horario necesitás en Mendoza, por ejemplo un hotel o el aeropuerto. Coordinamos las opciones antes del alquiler y te informamos si el servicio implica un cargo. Si querés devolver en otro lugar, avisalo en la misma consulta.</p>
+          </details>
+          <details>
+            <summary>¿Qué debería revisar para comparar una cotización?</summary>
+            <p>Además del precio, mirá los días y horarios incluidos, el kilometraje, la cobertura y la franquicia, la garantía, el combustible y los adicionales. El tipo de vehículo y el recorrido también importan: una tarifa más baja no siempre contempla lo mismo.</p>
+          </details>
+          <details>
+            <summary>¿Con cuánto combustible tengo que devolverlo?</summary>
+            <p>Con el mismo nivel de combustible con el que recibís el vehículo. Revisamos ese nivel en la entrega y en la devolución, por eso conviene prever la carga necesaria antes del horario de regreso.</p>
+          </details>
+          <details>
+            <summary>¿Puede manejar alguien más durante el viaje?</summary>
+            <p>Informanos desde el comienzo quiénes van a conducir. Cada conductor debe presentar su documentación y quedar autorizado en las condiciones del alquiler; no alcanza con que tenga licencia si no fue incorporado.</p>
+          </details>
+          <details>
+            <summary>¿Una camioneta 4x4 me permite hacer cualquier recorrido?</summary>
+            <p>No. La tracción 4x4 no habilita por sí sola cualquier camino o actividad. Compartí tu itinerario, especialmente si incluye ripio, montaña, trabajo en obra o viajes fuera de Mendoza, para revisar el vehículo adecuado y las autorizaciones necesarias.</p>
+          </details>
+          <details>
+            <summary>¿Qué hago si necesito devolver más tarde o cambiar el viaje?</summary>
+            <p>Avisanos antes del horario acordado. Un cambio de fecha, lugar o recorrido necesita coordinación y puede modificar la tarifa o las condiciones; no se considera aprobado hasta que te lo confirmemos.</p>
           </details>
         </div>
       </div>

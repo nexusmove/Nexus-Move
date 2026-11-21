@@ -4,7 +4,7 @@
     const originalText = new WeakMap();
     const originalAttributes = new WeakMap();
     const selector = document.getElementById('site-language');
-    const excluded = 'script, style, select, [translate="no"]';
+    const excluded = 'script, style, [translate="no"]';
     const attributes = ['aria-label', 'aria-roledescription', 'alt', 'title', 'placeholder'];
     let language = 'es';
 
@@ -88,8 +88,10 @@
         } catch {
             // Language switching also works when the browser blocks local storage.
         }
+        document.dispatchEvent(new Event('nexus:languagechange'));
     }
 
+    window.NexusLanguage = { translate };
     try {
         const saved = localStorage.getItem('nexus-language');
         if (languages.includes(saved)) language = saved;
