@@ -10,6 +10,7 @@ const heroTitle = document.getElementById('hero-title');
 const heroAccent = heroTitle.querySelector('span');
 const heroDescription = document.getElementById('hero-description');
 const heroChoices = hero.querySelector('.hero-areas');
+const aboutTitle = document.getElementById('nosotros-titulo');
 const sectionViews = {
     inicio: {
         label: 'Mendoza, Argentina',
@@ -35,9 +36,7 @@ const sectionViews = {
         description: 'Medimos nuestra huella de carbono y buscamos mejorar cómo cuidamos la flota, a las personas y los recursos.',
     },
     nosotros: {
-        label: 'Nexus Move',
-        title: 'Nosotros',
-        description: 'Más de 17 años de experiencia en el transporte de pasajeros.',
+        title: 'Somos Nexus Move',
     },
 };
 
@@ -89,15 +88,14 @@ function updateAreaAddress(area) {
 }
 
 function showHero(area) {
-    const { label, title, accent, description } = sectionViews[area];
     hero.dataset.view = area;
+    hero.hidden = area === 'nosotros';
+    if (hero.hidden) return;
+
+    const { label, title, accent, description } = sectionViews[area];
     heroLabel.textContent = label;
-    if (accent) {
-        heroAccent.textContent = accent;
-        heroTitle.replaceChildren(document.createTextNode(title + ' '), heroAccent);
-    } else {
-        heroTitle.textContent = title;
-    }
+    heroAccent.textContent = accent;
+    heroTitle.replaceChildren(document.createTextNode(title + ' '), heroAccent);
     heroDescription.textContent = description ?? '';
     heroDescription.hidden = !description;
     heroChoices.hidden = area !== 'inicio';
@@ -154,7 +152,10 @@ document.addEventListener('click', async event => {
         event.preventDefault();
         const focusHeading = area === 'nosotros' || (link.closest('.hero-areas') && link.matches(':focus-visible'));
         await showArea(area, true);
-        if (focusHeading && selectedArea === area) heroTitle.focus({ preventScroll: true });
+        if (focusHeading && selectedArea === area) {
+            const heading = area === 'nosotros' ? aboutTitle : heroTitle;
+            heading.focus({ preventScroll: true });
+        }
         return;
     }
 
