@@ -120,3 +120,6 @@
 @media (max-width: 380px) {
     .rentacar-content .booking-fields fieldset { grid-template-columns: minmax(0, 1fr); }
 }
+@media (max-width: 480px) {
+    .rentacar-content #rental-nosotros { scroll-margin-top: 168px; }
+}

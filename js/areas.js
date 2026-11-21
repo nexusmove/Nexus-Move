@@ -73,11 +73,11 @@ function getAreaFromAddress() {
     return 'inicio';
 }
 
-function updateAreaAddress(area) {
+function updateAreaAddress(area, fragment) {
     const address = new URL(window.location.href);
     if (area === 'inicio') address.searchParams.delete('area');
     else address.searchParams.set('area', area);
-    address.hash = '';
+    address.hash = fragment;
     if (address.href !== window.location.href) {
         window.history.pushState(null, '', address);
     }
@@ -94,21 +94,23 @@ function showHero(area) {
     heroChoices.hidden = area !== 'inicio';
 }
 
-async function showArea(area, updateAddress = false) {
+async function showArea(area, updateAddress = false, fragment = '') {
     const request = ++areaRequest;
     if (area === 'rentacar') {
         areaStatus.textContent = 'Cargando Rent a Car';
         try {
             await loadRental();
         } catch {
-            if (request === areaRequest) window.location.assign(rentalLink.href);
+            if (request === areaRequest) window.location.assign(rentalLink.href + (fragment || window.location.hash));
             return;
         }
     }
     if (request !== areaRequest) return;
 
-    if (updateAddress && area !== selectedArea) updateAreaAddress(area);
-    if (area === 'rentacar') syncRentalTabs();
+    if (updateAddress && (area !== selectedArea || fragment ||
+        (area === 'rentacar' && window.location.hash === '#rental-nosotros'))) {
+        updateAreaAddress(area, fragment);
+    }
 
     const changed = selectedArea !== area;
     selectedArea = area;
@@ -126,6 +128,7 @@ async function showArea(area, updateAddress = false) {
         else link.removeAttribute('aria-current');
         link.closest('.hero-area')?.classList.toggle('is-selected', current);
     }
+    if (area === 'rentacar') syncRentalTabs();
 
     const view = sectionViews[area];
     areaStatus.textContent = changed ? view.title + ' ' + view.accent : '';
@@ -143,7 +146,11 @@ document.addEventListener('click', async event => {
     if (area === 'inicio' || areaPanels.has(area)) {
         event.preventDefault();
         const focusHeading = link.closest('.hero-areas') && link.matches(':focus-visible');
-        await showArea(area, true);
+        const fragment = link.hasAttribute('data-rental-about') ? link.hash : '';
+        await showArea(area, true, fragment);
+        if (fragment && selectedArea === area && window.location.hash === fragment) {
+            focusRentalAbout();
+        }
         if (focusHeading && selectedArea === area) heroTitle.focus({ preventScroll: true });
         return;
     }
@@ -157,7 +164,11 @@ document.addEventListener('click', async event => {
 });
 
 window.addEventListener('popstate', () => showArea(getAreaFromAddress()));
-showArea(getAreaFromAddress());
+showArea(getAreaFromAddress()).then(() => {
+    if (selectedArea === 'rentacar' && window.location.hash === '#rental-nosotros') {
+        document.getElementById('rental-nosotros').scrollIntoView({ block: 'start' });
+    }
+});
 if (window.location.protocol.startsWith('http')) {
     for (const link of areaLinks.filter(link => link.dataset.area === 'rentacar')) {
         link.addEventListener('pointerenter', () => loadRental().catch(() => {}), { once: true });

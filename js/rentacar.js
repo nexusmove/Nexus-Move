@@ -2,6 +2,22 @@ function initializeRental(root) {
     const tabList = root.querySelector('.rental-tabs');
     const tabs = [...tabList.querySelectorAll('a[href^="#"]')];
     const panels = tabs.map(tab => root.querySelector(tab.hash));
+    const aboutLinks = [...document.querySelectorAll('.site-header [data-rental-about]')];
+    const rentalLinks = [...document.querySelectorAll('.site-header a[data-area="rentacar"]:not([data-rental-about]), .site-header a[href="#reservas"]')];
+    const areaPanel = root.closest('[data-area-panel]');
+
+    function updateHeader(activePanel) {
+        if (areaPanel?.hidden) return;
+        const about = activePanel.id === 'rental-nosotros';
+        for (const link of aboutLinks) {
+            if (about) link.setAttribute('aria-current', 'page');
+            else link.removeAttribute('aria-current');
+        }
+        for (const link of rentalLinks) {
+            if (about) link.removeAttribute('aria-current');
+            else link.setAttribute('aria-current', 'page');
+        }
+    }
 
     function showPanel(index) {
         tabs.forEach((tab, position) => {
@@ -10,6 +26,7 @@ function initializeRental(root) {
             tab.tabIndex = active ? 0 : -1;
             panels[position].hidden = !active;
         });
+        updateHeader(panels[index]);
     }
 
     function showPanelFromAddress() {
@@ -60,6 +77,18 @@ function initializeRental(root) {
     window.addEventListener('hashchange', showPanelFromAddress);
     window.addEventListener('popstate', showPanelFromAddress);
     showPanelFromAddress();
+
+    if (!areaPanel) {
+        for (const link of [...aboutLinks, ...rentalLinks]) {
+            link.addEventListener('click', event => {
+                if (event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
+                event.preventDefault();
+                activateTab(tabs.findIndex(tab => tab.hash === link.hash));
+                if (link.hasAttribute('data-rental-about')) focusRentalAbout();
+                else panels[0].scrollIntoView({ block: 'start' });
+            });
+        }
+    }
 
     const footerFleet = document.querySelector('footer a[href="#flota"]');
     footerFleet?.addEventListener('click', event => {
@@ -187,6 +216,12 @@ function initializeBooking(root) {
     });
     updateMinimumDates();
     form.hidden = false;
+}
+
+function focusRentalAbout() {
+    const panel = document.getElementById('rental-nosotros');
+    panel.focus({ preventScroll: true });
+    panel.scrollIntoView({ block: 'start' });
 }
 
 const rentalPage = document.querySelector('#rentacar-content');
