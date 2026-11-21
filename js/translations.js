@@ -238,6 +238,7 @@ window.NexusTranslations = [
 window.NexusTranslations.push(
     ["Fechas y disponibilidad","Datas e disponibilidade","Dates and availability","Date e disponibilità"],
     ["Nosotros","Sobre nós","About us","Chi siamo"],
+    ["Más de 17 años de experiencia en el transporte de pasajeros.","Mais de 17 anos de experiência no transporte de passageiros.","Over 17 years of experience in passenger transport.","Oltre 17 anni di esperienza nel trasporto di passeggeri."],
     ["FAQ · Preguntas frecuentes","FAQ · Perguntas frequentes","FAQ · Frequently asked questions","FAQ · Domande frequenti"],
     ["Planificá tu alquiler","Planeje seu aluguel","Plan your rental","Organizza il tuo noleggio"],
     ["Elegí las fechas de entrega y devolución para preparar tu consulta de alquiler en Mendoza.","Escolha as datas de retirada e devolução para preparar sua consulta de aluguel em Mendoza.","Choose your pickup and return dates to prepare your rental enquiry in Mendoza.","Scegli le date di ritiro e riconsegna per preparare la tua richiesta di noleggio a Mendoza."],

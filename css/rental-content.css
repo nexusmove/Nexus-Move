@@ -49,9 +49,6 @@
 .rentacar-content .rental-detail { padding: 24px;  border: 1px solid var(--line);  border-radius: 12px;  background: white;  }
 .rentacar-content .rental-detail h3 { margin: 0 0 8px;  color: var(--navy);  font-size: 1.12rem;  }
 .rentacar-content .rental-detail p { margin: 0;  color: var(--muted);  }
-.rentacar-content .rental-story { max-width: 850px; margin-bottom: 30px; color: #475467; }
-.rentacar-content .rental-story p { margin: 0 0 18px; }
-.rentacar-content .rental-story .rental-story-lead { color: var(--navy); font-size: clamp(1.2rem, 2.4vw, 1.65rem); line-height: 1.4; font-weight: 750; letter-spacing: -.02em; }
 .rentacar-content .rental-steps { margin: 0;  padding: 0;  list-style-position: inside;  }
 .rentacar-content .rental-steps li::marker { color: var(--orange-text);  font-weight: 850;  }
 .rentacar-content .rental-cta { margin-top: 25px;  }
@@ -119,7 +116,4 @@
 }
 @media (max-width: 380px) {
     .rentacar-content .booking-fields fieldset { grid-template-columns: minmax(0, 1fr); }
-}
-@media (max-width: 480px) {
-    .rentacar-content #rental-nosotros { scroll-margin-top: 168px; }
 }

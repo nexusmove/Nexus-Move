@@ -8,8 +8,8 @@
     <title>Nexus Move | Transporte y Rent a Car en Mendoza</title>
     <link rel="stylesheet" href="css/icons.css">
     <link rel="stylesheet" href="css/navigation.css">
-    <link rel="stylesheet" href="css/home.css">
-    <link rel="stylesheet" href="css/rental-content.css">
+    <link rel="stylesheet" href="css/home.css?v=nosotros">
+    <link rel="stylesheet" href="css/rental-content.css?v=nosotros">
 </head>
 <body>
     <div class="topline" aria-hidden="true"></div>
@@ -35,7 +35,7 @@
                 <a href="#servicios" data-area="transporte">Transporte</a>
                 <a href="flota.html" data-area="rentacar">Rent a Car</a>
                 <a href="#sostenibilidad" data-area="sostenibilidad">Sostenibilidad</a>
-                <a href="flota.html#rental-nosotros" data-area="rentacar" data-rental-about>Nosotros</a>
+                <a href="?area=nosotros" data-area="nosotros">Nosotros</a>
                 <a class="button button-primary" href="#contacto">Solicitar propuesta</a>
             </div>
         </nav>
@@ -44,7 +44,7 @@
             <a href="#servicios" data-area="transporte">Transporte</a>
             <a href="flota.html" data-area="rentacar">Rent a Car</a>
             <a href="#sostenibilidad" data-area="sostenibilidad">Sostenibilidad</a>
-            <a href="flota.html#rental-nosotros" data-area="rentacar" data-rental-about>Nosotros</a>
+            <a href="?area=nosotros" data-area="nosotros">Nosotros</a>
         </nav>
     </header>
 
@@ -177,6 +177,25 @@
             <div id="rentacar-embed"></div>
         </div>
 
+        <section class="section about area-panel" id="area-nosotros" data-area-panel="nosotros" aria-labelledby="nosotros-titulo" hidden>
+            <div class="container">
+                <div class="section-head">
+                    <h2 class="section-title" id="nosotros-titulo">Somos Nexus Move</h2>
+                    <p class="section-copy">Una sola marca, dos formas de acompañarte: transporte con chofer y alquiler de autos y camionetas en Mendoza.</p>
+                </div>
+                <div class="about-story">
+                    <p class="about-story-lead">Detrás de cada viaje hay una persona, una historia y un motivo para llegar.</p>
+                    <p>Nuestra experiencia de más de 17 años en el transporte de pasajeros nos enseñó que un buen servicio empieza mucho antes de poner el vehículo en marcha: empieza por escuchar, cumplir lo acordado y tratar a cada persona con respeto.</p>
+                    <p>En Nexus Move llevamos esa misma forma de trabajar al alquiler de autos y camionetas. Ya sea por trabajo, unas vacaciones o una necesidad cotidiana, queremos que puedas organizar tu viaje con información clara y alguien del otro lado para acompañarte.</p>
+                </div>
+                <div class="about-values">
+                    <article><h3>Te escuchamos</h3><p>No todos los viajes son iguales. Nos contás qué necesitás y te orientamos según las personas que viajan, el equipaje y el recorrido.</p></article>
+                    <article><h3>Cuidado de la flota</h3><p>Realizamos mantenimiento preventivo y un seguimiento de los controles técnicos de cada unidad para favorecer una operación segura y eficiente.</p></article>
+                    <article><h3>Buen trato, de principio a fin</h3><p>La confianza se cuida con respuestas claras, atención cercana y respeto por tu tiempo. Esa es la forma en la que queremos acompañarte.</p></article>
+                </div>
+            </div>
+        </section>
+
         <section class="section sustainability area-panel" id="sostenibilidad" data-area-panel="sostenibilidad" aria-labelledby="sostenibilidad-titulo">
             <div class="container">
                 <div class="sustainability-intro">
@@ -264,9 +283,9 @@
 
     <script src="js/navigation.js"></script>
     <script src="js/home.js"></script>
-    <script src="js/rentacar.js"></script>
-    <script src="js/areas.js"></script>
-    <script src="js/translations.js"></script>
+    <script src="js/rentacar.js?v=nosotros"></script>
+    <script src="js/areas.js?v=nosotros"></script>
+    <script src="js/translations.js?v=nosotros"></script>
     <script src="js/language.js"></script>
 </body>
 </html>

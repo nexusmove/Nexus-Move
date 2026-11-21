@@ -150,8 +150,7 @@ async function exercise(browser, base, width, embedded) {
         assert.equal(await page.locator('.card:visible').count(), 3);
         await page.locator('[data-filter=todos]').click();
 
-        await choose('nosotros');
-        assert((await page.locator('.rental-story').innerText()).includes('17'));
+        assert.equal(await page.locator('.rental-tabs [href="#rental-nosotros"]').count(), 0);
         await choose('preguntas-frecuentes');
         assert.equal(await page.locator('.rental-faq details').count(), 12);
         for (const detail of await page.locator('.rental-faq details').all()) {
@@ -185,7 +184,7 @@ async function exercise(browser, base, width, embedded) {
     assert.deepEqual(await page.evaluate(() => policyErrors), []);
     assert.deepEqual(errors, []);
     await page.close();
-    console.log(width + 'px ' + (embedded ? 'web' : 'flota') + ': 4 idiomas, validación, sin disponibilidad, FAQ, historia y navegación OK');
+    console.log(width + 'px ' + (embedded ? 'web' : 'flota') + ': 4 idiomas, validación, sin disponibilidad, FAQ y navegación OK');
 }
 
 (async () => {
