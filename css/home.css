@@ -105,9 +105,9 @@ main [id] { scroll-margin-top: 100px; }
 .proof-item { display: grid; grid-template-columns: 54px 1fr; gap: 16px; align-items: center; padding: 28px 30px; border-right: 1px solid var(--line); }
 .proof-item:first-child { padding-left: 0; }
 .proof-item:last-child { border-right: 0; padding-right: 0; }
-.proof-icon { display: grid; place-items: center; width: 54px; height: 54px; color: var(--orange); background: #fff4eb; border-radius: 50%; font-size: 1.1rem; }
+.proof-icon { display: grid; place-items: center; width: 54px; height: 54px; color: var(--orange-text); background: #fff4eb; border-radius: 50%; font-size: 1.1rem; }
 .proof-item strong { display: block; color: var(--blue); font-size: 1rem; }
-.proof-item span { display: block; color: var(--muted); font-size: 0.88rem; line-height: 1.4; }
+.proof-item > div > span { display: block; color: var(--muted); font-size: 0.88rem; line-height: 1.4; }
 
 .services { background: var(--surface); }
 .section-head { display: flex; align-items: end; justify-content: space-between; gap: 32px; margin-bottom: 50px; }
