@@ -11,8 +11,8 @@
         dot.setAttribute('aria-label', slide.querySelector('h3').textContent);
         dot.setAttribute('aria-controls', track.id);
         dot.addEventListener('click', () => {
-            setRotation(false);
             goToSlide(index);
+            scheduleRotation();
         });
         pagination.append(dot);
         return dot;
@@ -26,8 +26,8 @@
     const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
     let rotating;
     let visible = false;
-    let hovered = false;
-    let interval;
+    let activePointer = null;
+    let timer;
 
     function currentSlide() {
         return Math.max(0, Math.round(track.scrollLeft / (track.clientWidth || 1))) % slides.length;
@@ -38,11 +38,11 @@
     }
 
     function scheduleRotation() {
-        window.clearInterval(interval);
-        if (!rotating || !visible || hovered || document.hidden) return;
-        interval = window.setInterval(() => {
+        window.clearTimeout(timer);
+        if (!rotating || !visible || activePointer !== null || document.hidden) return;
+        timer = window.setTimeout(() => {
             goToSlide(currentSlide() + 1);
-        }, 6500);
+        }, 3000);
     }
 
     function setRotation(active) {
@@ -64,24 +64,29 @@
     }
 
     motion.addEventListener('click', () => setRotation(!rotating));
-    track.addEventListener('pointerdown', () => setRotation(false), { passive: true });
-    section.addEventListener('focusin', event => {
-        if (event.target !== motion && event.target.matches(':focus-visible')) setRotation(false);
-    });
-    section.addEventListener('mouseenter', () => {
-        hovered = true;
+    track.addEventListener('pointerdown', event => {
+        activePointer = event.pointerId;
         scheduleRotation();
-    });
-    section.addEventListener('mouseleave', () => {
-        hovered = false;
+    }, { passive: true });
+    function releasePointer(event) {
+        if (activePointer !== event.pointerId) return;
+        activePointer = null;
         scheduleRotation();
-    });
+    }
+    window.addEventListener('pointerup', releasePointer);
+    window.addEventListener('pointercancel', releasePointer);
     reducedMotion.addEventListener('change', event => {
         if (event.matches) setRotation(false);
     });
-    document.addEventListener('visibilitychange', scheduleRotation);
+    document.addEventListener('visibilitychange', () => {
+        if (document.hidden) activePointer = null;
+        scheduleRotation();
+    });
 
-    track.addEventListener('scroll', updateControls, { passive: true });
+    track.addEventListener('scroll', () => {
+        updateControls();
+        scheduleRotation();
+    }, { passive: true });
     new ResizeObserver(updateControls).observe(track);
     new IntersectionObserver(([entry]) => {
         visible = entry.intersectionRatio >= 0.5;
