@@ -11,6 +11,7 @@ const heroAccent = heroTitle.querySelector('span');
 const heroDescription = document.getElementById('hero-description');
 const heroChoices = hero.querySelector('.hero-areas');
 const aboutTitle = document.getElementById('nosotros-titulo');
+const homeHighlights = document.getElementById('home-highlights');
 const sectionViews = {
     inicio: {
         label: 'Mendoza, Argentina',
@@ -89,6 +90,7 @@ function updateAreaAddress(area) {
 
 function showHero(area) {
     hero.dataset.view = area;
+    homeHighlights.hidden = area !== 'inicio';
     hero.hidden = area === 'nosotros';
     if (hero.hidden) return;
 

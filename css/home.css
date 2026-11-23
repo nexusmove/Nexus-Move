@@ -109,6 +109,40 @@ main [id] { scroll-margin-top: 100px; }
 .proof-item strong { display: block; color: var(--blue); font-size: 1rem; }
 .proof-item > div > span { display: block; color: var(--muted); font-size: 0.88rem; line-height: 1.4; }
 
+.section.home-highlights { padding-block: 48px 55px; background: #fff; }
+.home-highlights[hidden], .highlights-controls[hidden] { display: none; }
+.highlights-heading { display: flex; justify-content: space-between; align-items: end; gap: 16px; margin-bottom: 20px; }
+.highlights-heading .section-title { font-size: clamp(1.65rem, 3.4vw, 2.6rem); }
+.highlights-controls { display: flex; flex: none; gap: 6px; }
+.highlights-controls button { width: 44px; height: 44px; padding: 0 0 3px; border: 1px solid #d0d5dd; border-radius: 8px; background: #fff; color: var(--blue); font: inherit; font-size: 1.6rem; line-height: 1; cursor: pointer; }
+.highlights-controls button:hover:not(:disabled) { border-color: var(--orange-text); color: var(--orange-text); }
+.highlights-controls button:disabled { opacity: .45; cursor: default; }
+.highlights-track { display: grid; grid-auto-flow: column; grid-auto-columns: calc((100% - 18px) / 2); gap: 18px; overflow-x: auto; padding-bottom: 12px; scroll-snap-type: x mandatory; scroll-behavior: smooth; scrollbar-width: thin; scrollbar-color: #9aa5b5 #f5f7fa; }
+.highlight-card { display: flex; flex-direction: column; min-width: 0; overflow: hidden; border: 1px solid var(--line); border-radius: 12px; background: #f8fafc; scroll-snap-align: start; }
+.highlight-rse { border-color: #dce8df; background: #f4f8f6; }
+.highlight-photo { overflow: hidden; aspect-ratio: 2.35 / 1; background: #e7eaf0; }
+.highlight-photo img { width: 100%; height: 100%; object-fit: cover; }
+.highlight-photo-tree { background: #324737; }
+.highlight-photo-tree img { height: auto; margin-top: -49%; }
+.highlight-photo-car img { object-position: 50% 64%; }
+.highlight-copy { display: flex; flex: 1; flex-direction: column; padding: 18px 22px 21px; }
+.highlight-copy h3, .rse-feature h3 { margin: 0; color: var(--blue); font-size: clamp(1.2rem, 2vw, 1.5rem); line-height: 1.15; }
+.highlight-copy p, .rse-feature p { margin: 8px 0 13px; color: #475467; font-size: .94rem; }
+.highlight-copy a, .rse-feature a { align-self: start; display: inline-flex; gap: 8px; align-items: center; min-height: 44px; }
+.rse-feature { display: grid; grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); align-items: center; gap: 22px; margin: 30px 0; padding: 18px; border: 1px solid #dbe7df; border-radius: 12px; background: #fff; }
+.rse-visual { min-width: 0; margin: 0; }
+.rse-visual .highlight-photo { border-radius: 7px; }
+.rse-visual figcaption { margin-top: 4px; color: #475467; font-size: .75rem; }
+@media (max-width: 680px) {
+    .section.home-highlights { padding-block: 33px 40px; }
+    .highlights-track { grid-auto-columns: 85%; gap: 12px; }
+    .highlight-copy { padding: 16px; }
+    .rse-feature { grid-template-columns: minmax(0, 1fr); gap: 15px; }
+}
+@media (prefers-reduced-motion: reduce) {
+    .highlights-track { scroll-behavior: auto; }
+}
+
 .services { background: var(--surface); }
 .section-head { display: flex; align-items: end; justify-content: space-between; gap: 32px; margin-bottom: 50px; }
 .section-head .section-copy { margin: 0; max-width: 420px; }

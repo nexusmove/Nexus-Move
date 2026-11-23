@@ -1,0 +1,49 @@
+.privacy-notice {
+    position: fixed;
+    z-index: 60;
+    inset: auto auto 20px 20px;
+    width: min(420px, calc(100% - 40px));
+    max-height: 80vh;
+    overflow: auto;
+    padding: 19px;
+    border: 1px solid var(--line, #e7eaf0);
+    border-radius: 12px;
+    color: #0f172a;
+    background: #fff;
+    box-shadow: 0 12px 40px rgba(15, 23, 42, .18);
+}
+.privacy-notice[hidden], .privacy-settings[hidden] { display: none; }
+.privacy-notice h2 { margin: 0; font-size: 1.07rem; line-height: 1.25; }
+.privacy-notice p { margin: 7px 0 13px; color: #475467; font-size: .87rem; line-height: 1.45; }
+.privacy-actions { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
+.privacy-actions button {
+    min-height: 44px;
+    padding: 7px 9px;
+    border: 1px solid #9aa5b5;
+    border-radius: 7px;
+    color: #0f172a;
+    background: #fff;
+    font: inherit;
+    font-size: .84rem;
+    font-weight: 750;
+    line-height: 1.2;
+    cursor: pointer;
+}
+.privacy-actions button:hover { background: #fff7ed; border-color: #b94708; }
+.privacy-settings {
+    justify-self: start;
+    padding: 0;
+    border: 0;
+    color: #aeb7c9;
+    background: none;
+    font: inherit;
+    text-align: left;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    cursor: pointer;
+}
+.privacy-settings:hover { color: #fff; }
+@media (max-width: 560px) {
+    .privacy-notice { inset: auto 12px 12px; width: auto; padding: 15px; }
+    body:has(.privacy-notice:not([hidden])) :is(.floating, .floating-contact) { visibility: hidden; }
+}
