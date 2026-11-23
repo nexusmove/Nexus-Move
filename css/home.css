@@ -117,8 +117,12 @@ main [id] { scroll-margin-top: 100px; }
 .highlights-controls button { min-width: 44px; min-height: 44px; padding: 0 8px 3px; border: 1px solid #d0d5dd; border-radius: 8px; background: #fff; color: var(--blue); font: inherit; font-size: 1.6rem; line-height: 1; cursor: pointer; }
 .highlights-controls .highlights-motion { padding: 0 10px; font-size: .79rem; font-weight: 750; }
 .highlights-controls button:hover:not(:disabled) { border-color: var(--orange-text); color: var(--orange-text); }
-.highlights-controls button:disabled { opacity: .45; cursor: default; }
+.highlights-dots:not([hidden]) { display: flex; justify-content: center; padding: 2px 0; }
+.highlights-dots button { display: grid; place-items: center; width: 44px; height: 44px; padding: 0; border: 0; border-radius: 50%; background: transparent; cursor: pointer; }
+.highlights-dots button::before { content: ""; width: 10px; height: 10px; border: 2px solid #64748b; border-radius: 50%; box-sizing: border-box; }
+.highlights-dots button[aria-current="true"]::before { width: 14px; height: 14px; border-color: var(--blue); background: var(--blue); }
 .highlights-track { display: grid; grid-auto-flow: column; grid-auto-columns: 100%; overflow-x: auto; scroll-snap-type: x mandatory; scroll-behavior: smooth; scrollbar-width: thin; scrollbar-color: #9aa5b5 #0f172a; }
+.home-highlights:has(.highlights-dots:not([hidden])) .highlights-track { scrollbar-width: none; }
 .highlight-card { --slide-tone: #0f172a; display: grid; grid-template-columns: minmax(0, 42%) minmax(0, 58%); min-width: 0; min-height: clamp(320px, 31vw, 495px); background: var(--slide-tone); scroll-snap-align: start; scroll-snap-stop: always; }
 .highlight-rse { --slide-tone: #163629; }
 .highlight-photo { overflow: hidden; aspect-ratio: 2.35 / 1; background: #e7eaf0; }

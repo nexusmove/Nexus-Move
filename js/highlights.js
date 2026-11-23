@@ -2,32 +2,46 @@
     const section = document.getElementById('home-highlights');
     const track = document.getElementById('highlights-track');
     const controls = document.querySelector('.highlights-controls');
-    const [previous, motion, next] = controls.querySelectorAll('button');
-    const last = track.children.length - 1;
+    const motion = controls.querySelector('.highlights-motion');
+    const pagination = section.querySelector('.highlights-dots');
+    const slides = Array.from(track.children);
+    const dots = slides.map((slide, index) => {
+        const dot = document.createElement('button');
+        dot.type = 'button';
+        dot.setAttribute('aria-label', slide.querySelector('h3').textContent);
+        dot.setAttribute('aria-controls', track.id);
+        dot.addEventListener('click', () => {
+            setRotation(false);
+            goToSlide(index);
+        });
+        pagination.append(dot);
+        return dot;
+    });
+
+    // The last transition scrolls forward into a copy, then returns to the identical first card.
+    const loopStart = slides[0].cloneNode(true);
+    loopStart.inert = true;
+    loopStart.setAttribute('aria-hidden', 'true');
+    track.append(loopStart);
     const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
     let rotating;
     let visible = false;
     let hovered = false;
     let interval;
-    let rotationDirection = 1;
 
     function currentSlide() {
-        return Math.min(last, Math.max(0, Math.round(track.scrollLeft / (track.clientWidth || 1))));
+        return Math.max(0, Math.round(track.scrollLeft / (track.clientWidth || 1))) % slides.length;
     }
 
     function goToSlide(index) {
-        const target = Math.min(last, Math.max(0, index));
-        track.scrollTo({ left: target * track.clientWidth });
+        track.scrollTo({ left: index * track.clientWidth });
     }
 
     function scheduleRotation() {
         window.clearInterval(interval);
         if (!rotating || !visible || hovered || document.hidden) return;
         interval = window.setInterval(() => {
-            const index = currentSlide();
-            if (index === last) rotationDirection = -1;
-            if (index === 0) rotationDirection = 1;
-            goToSlide(index + rotationDirection);
+            goToSlide(currentSlide() + 1);
         }, 6500);
     }
 
@@ -40,18 +54,15 @@
         scheduleRotation();
     }
 
-    function moveManually(direction) {
-        setRotation(false);
-        goToSlide(currentSlide() + direction);
-    }
-
     function updateControls() {
-        previous.disabled = track.scrollLeft <= 1;
-        next.disabled = track.scrollLeft >= track.scrollWidth - track.clientWidth - 1;
+        if (!track.clientWidth) return;
+        if (track.scrollLeft >= track.scrollWidth - track.clientWidth - 1) {
+            track.scrollTo({ left: 0, behavior: 'instant' });
+        }
+        const selected = currentSlide();
+        dots.forEach((dot, index) => dot.setAttribute('aria-current', String(index === selected)));
     }
 
-    previous.addEventListener('click', () => moveManually(-1));
-    next.addEventListener('click', () => moveManually(1));
     motion.addEventListener('click', () => setRotation(!rotating));
     track.addEventListener('pointerdown', () => setRotation(false), { passive: true });
     section.addEventListener('focusin', event => {
@@ -73,10 +84,11 @@
     track.addEventListener('scroll', updateControls, { passive: true });
     new ResizeObserver(updateControls).observe(track);
     new IntersectionObserver(([entry]) => {
-        visible = entry.isIntersecting;
+        visible = entry.intersectionRatio >= 0.5;
         scheduleRotation();
     }, { threshold: 0.5 }).observe(track);
     setRotation(!reducedMotion.matches);
     controls.hidden = false;
+    pagination.hidden = false;
     updateControls();
 })();
